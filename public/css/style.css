@@ -1,0 +1,61 @@
+/* CSS goes here */
+
+html {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(0.45turn,#65daad,#b5f6dd,#ecfff8)
+}
+
+.navbar {
+    background: linear-gradient(0.35turn, #ecdda7 50%, #c6dfe8 55%, #fff9e4);
+    border-radius: 0.5rem 0.5rem 0 0;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 1px transparent;
+}
+
+.tech-blog-title {
+    font-family: 'Roboto Slab', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3rem;
+}
+
+
+.logoutBtn {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    float: right;
+    color: #2e2e2e;
+    background: linear-gradient(0.9turn, #4e4e4e 20%, #d4d4d4 70%, #808080 98%);
+    border-radius: 0.45rem 0.5rem;
+    border: 3px solid #2e2e2e;
+    text-align: center;
+    padding: 0.3rem;
+    box-shadow: 0 0 1px transparent;
+    margin-top: 0rem;
+    margin-left: 0.25rem;
+}
+
+
+.login-email-field,
+.login-password-field,
+.sign-up-username-field,
+.sign-up-email-field,
+.sign-up-password-field {
+    background: #f6fafb;
+    font-size: 1rem;
+    line-height: 1.35rem;
+    width: 20rem;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5rem;
+}
+
+.login-email-field:hover,
+.login-password-field:hover,
+.sign-up-username-field:hover,
+.sign-up-email-field:hover,
+.sign-up-password-field:hover {
+    background: #ffffff;
+}
