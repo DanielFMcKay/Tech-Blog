@@ -4,7 +4,7 @@ const blogData =
 [
     {
         "title": "What's the deal with airline peanuts?",
-        "blog_text": "Airline peanuts have been a long-standing tradition on many flights, particularly in the United States.\nHowever, in recent years, the availability of peanuts on flights has become less common due to concerns about allergies and passenger safety. The primary reason for the prevalence of peanuts on airplanes was simply that they were an inexpensive snack that could be easily distributed to passengers. Peanuts were also a popular choice because they are relatively small and non-perishable, making them convenient for airline catering.",
+        "blog_text": "Airline peanuts have been a long-standing tradition on many flights, particularly in the United States.",
         "user_id": 1,
         "likes": 0
     },
