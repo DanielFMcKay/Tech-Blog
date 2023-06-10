@@ -2,25 +2,28 @@
 
 html {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(0.45turn,#65daad,#b5f6dd,#ecfff8)
+    background: linear-gradient(0.39turn,#65daad,#b5f6dd 80%,#ecfff8 92%, #0fe3ff);
+    height: 100%;
+    border-top: 2px solid #3a4558;
 }
 
 .navbar {
-    background: linear-gradient(0.35turn, #ecdda7 50%, #c6dfe8 55%, #fff9e4);
+    background: linear-gradient(0.49turn, #ecdda7 20%, #c6dfe8 55%, #fff9e4);
     border-radius: 0.5rem 0.5rem 0 0;
     padding: 0.5rem;
     margin-bottom: 1rem;
     box-shadow: 0 0 1px transparent;
+    border-bottom: 2px solid #3a4558;
 }
 
 .tech-blog-title {
     font-family: 'Roboto Slab', Verdana, Geneva, Tahoma, sans-serif;
     font-size: 3rem;
+    text-shadow: 1px 1px 1px #5f676d;
 }
 
 
 .logoutBtn {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
     float: right;
@@ -29,10 +32,19 @@ html {
     border-radius: 0.45rem 0.5rem;
     border: 3px solid #2e2e2e;
     text-align: center;
-    padding: 0.3rem;
+    padding: 0.2rem 0.5rem 0.4rem 0.5rem;
     box-shadow: 0 0 1px transparent;
     margin-top: 0rem;
     margin-left: 0.25rem;
+    margin-right: 0.5rem;
+}
+
+.logoutBtn:hover {
+    color: #ffffff;
+    background: linear-gradient(0.35turn, #ff1f1f, #ffb7b7);
+    text-shadow: 0 0 1px #ececec, 0 0 2px #ececec, 0 0 3px #ffe1e1;
+    border: 2px solid #4b4747;
+    box-shadow: 2px 2px 2px #4b4747;
 }
 
 
@@ -58,4 +70,202 @@ html {
 .sign-up-email-field:hover,
 .sign-up-password-field:hover {
     background: #ffffff;
+}
+
+.signup-popup {
+    display: hidden;
+    position: fixed;
+    padding-top: 15rem;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #06244459;
+}
+
+
+.sign-up-container {
+    line-height: 1.5rem;
+    background: linear-gradient(0.48turn, #cbcb78, #fdfcf4);
+    border-radius: 15px;
+    margin: auto;
+    padding: 1.75rem 1.75rem 1rem 2rem;
+    border: 4px solid #5a6164;
+    width: 30rem;
+    height: 17.75rem;
+    justify-content: space-around;
+}
+
+.sign-up-container p {
+    text-align: center;
+    color: #2a2a2e;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 2px #b9cde6;
+    margin-bottom: 0.75rem;
+}
+
+.signup-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.input-fields-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.close-sign-up-popup {
+    color: #828c9c;
+    float: right;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: -1.15rem;
+    margin-right: -1.15rem;
+}
+
+.close-sign-up-popup:hover,
+.close-sign-up-popup:focus {
+    color: #42464b;
+    text-shadow: 0 0 1px #708090, 1px 1px 1px #708090;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sign-up-submit-button {
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: linear-gradient(#66b7d2, lightblue);
+    border: 2px solid #4f729b;
+    border-radius: 0.9rem;
+    padding: 0.2rem 0.2rem 0.4rem 0.2rem;
+    margin-top: 0.25rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 6rem;
+}
+
+.sign-up-submit-button:hover {
+    color: #e9f6fa;
+    background: linear-gradient(#66b7d2, #5c85b3);
+    border: 3px solid #414b57;
+    text-shadow: 0 0 2px #5c85b3;
+    padding: 0.2rem 0.25rem 0.4rem 0.25rem;
+    box-shadow: 2px 2px 2px #6d8db1;
+}
+
+.login-button {
+    color: #ececec;
+    font-weight: 600;
+    background: linear-gradient(#0752f5, #7d9ee7);
+    font-size: 1.2rem;
+    width: fit-content;
+    min-width: 5rem;
+    border: 2px solid #343435;
+    border-radius: 0.35rem;
+    padding-bottom: 0.25rem;
+    margin-left: 0.35rem;
+}
+
+.login-button:hover {
+    color: #292929;
+    background: linear-gradient(#6495ff, #c8daff);
+    box-shadow: 0 0 1px #4d6b75, 0 0 2px #4d6b75, 0 0 4px #4d6b75, 0 0 6px #4d6b75;
+    text-shadow: 0 0 1px #354950, 0 0 2px #4d6b75;
+    text-decoration: none;
+}
+
+.login-input-tile {
+    display: hidden;
+    position: fixed;
+    padding-top: 15rem;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #12513360; 
+}
+
+.sign-up-button {
+    color: #1d1d1d;
+    font-weight: 600;
+    font-size: 1.2rem;
+    background: linear-gradient(#e4ad16, #f7e867);
+    width: fit-content;
+    min-width: 5rem;
+    align-self: center;
+    margin-left: 0.2rem;
+    border-radius: 0.35rem;
+    padding-bottom: 0.25rem;
+}
+
+.sign-up-button:hover {
+    color: #292929;
+    background: linear-gradient(#fff453, #fff7d3);
+    box-shadow: 0 0 1px #4d6b75, 0 0 2px #4d6b75, 0 0 4px #4d6b75, 0 0 6px #4d6b75;
+    text-shadow: 0 0 1px #6b6d4d, 0 0 2px #95977a;
+    text-decoration: none;
+}
+
+.login-container {
+    line-height: 1.5rem;
+    background: linear-gradient(0.48turn, #87b1e9, #f4f9fd);
+    border-radius: 15px;
+    margin: auto;
+    padding: 1.75rem 1.75rem 1rem 2rem;
+    border: 4px solid #5a6164;
+    width: 30rem;
+    height: 14.5rem;
+    justify-content: space-around;
+}
+
+.login-container p {
+    text-align:center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 2px #b9cde6;
+    margin-bottom: 0.75rem;
+}
+
+.close-login-popup {
+    color: #828c9c;
+    float: right;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: -1.15rem;
+    margin-right: -1.15rem;
+}
+
+.close-login-popup:hover {
+    color: #42464b;
+    text-shadow: 0 0 1px #708090, 1px 1px 1px #708090;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+.login-submit-button {
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: linear-gradient(#66b7d2, lightblue);
+    border: 2px solid #4f729b;
+    border-radius: 0.9rem;
+    padding: 0.1rem 0.2rem 0.5rem 0.2rem;
+    margin-top: 0.25rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 6rem;
+}
+
+.login-submit-button:hover {
+    color: #e9f6fa;
+    background: linear-gradient(#66b7d2, #5c85b3);
+    border: 3px solid #414b57;
+    text-shadow: 0 0 2px #5c85b3;
+    padding: 0.2rem 0.25rem 0.4rem 0.25rem;
 }

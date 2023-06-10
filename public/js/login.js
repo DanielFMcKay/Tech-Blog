@@ -22,13 +22,13 @@ signUpPassword.value = signUpPassword?.trim();
 const signUpButton = document.querySelectorAll(".sign-up-button")[0];
 const signUpTile = document.querySelectorAll("#signUpTile")[0];
 const signUpSubmitBtn = document.querySelectorAll(".sign-up-submit-button")[0];
-signUpTile.style.display = "hidden";
+signUpTile.style.display = "none";
 
 
 const closeSignUpPopup = document.querySelectorAll(".close-sign-up-popup")[0];
-const loginTile = document.querySelectorAll("#login-input-tile")[0];
+const loginTile = document.querySelectorAll(".login-input-tile")[0];
 const closeLoginPopup = document.querySelectorAll(".close-login-popup")[0];
-loginTile.style.display = "hidden";
+loginTile.style.display = "none";
 
 
 loginBtn.addEventListener("click", function () {
@@ -36,22 +36,35 @@ loginBtn.addEventListener("click", function () {
 });
 
 signUpButton.addEventListener("click", function () {
-  signUpTile.style.display = "block";
+    signUpTile.style.display = "block";
 });
 
+
 closeSignUpPopup.onclick = function () {
-  signUpTile.style.display = "none";
+    signUpTile.style.display = "none";
 };
+
 
 closeLoginPopup.onclick = function () {
     loginTile.style.display = "none";
 };
 
 window.onclick = function (event) {
-  if (event.target == loginTile) {
-    loginTile.style.display = "none";
-  }
+    if (event.target == loginTile) {
+        loginTile.style.display = "none";
+    }
+    console.log("login tile closed")
 };
+
+window.onclick = function (event) {
+    if (event.target == signUpTile) {
+        signUpTile.style.display = "none";
+    }
+    console.log("sign-up tile closed")
+};
+
+
+
 
 
 const attemptLogin = async () => {
@@ -77,28 +90,28 @@ const attemptSignUp = async () => {
     const usernameInput = document.querySelector('.sign-up-username-field');
     const emailInput = document.querySelector('.sign-up-email-field');
     const passwordInput = document.querySelector('.sign-up-password-field');
-  
+
     emailInput.value = emailInput.value.trim();
     emailInput.value = emailInput.value.toLowerCase();
     passwordInput.value = passwordInput.value.trim();
-  
-  
+
+
     // Create a data object with the input values
     const userData = {
-      user_name: usernameInput.value,
-      email: emailInput.value,
-      password: passwordInput.value
+        user_name: usernameInput.value,
+        email: emailInput.value,
+        password: passwordInput.value
     };
     // Dan's validity checks
     if (usernameInput.value === "" || emailInput.value === "" || passwordInput.value === "") {
-      return;
+        return;
     } else if (emailInput.value.indexOf('@') < 1 || emailInput.value.indexOf('.') < 1 || emailInput.value.lastIndexOf('.') < emailInput.value.indexOf('@')) {
-      alert("Please enter a valid email 🔱");
-      return;
+        alert("Please enter a valid email 🔱");
+        return;
     } else if
-      (passwordInput.value.length < 6) {
-      alert("Please use at least 6 characters for your password")
-      return;
+        (passwordInput.value.length < 6) {
+        alert("Please use at least 6 characters for your password")
+        return;
     };
     try {
         // Send the POST request to your server endpoint
