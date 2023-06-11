@@ -269,3 +269,31 @@ html {
     text-shadow: 0 0 2px #5c85b3;
     padding: 0.2rem 0.25rem 0.4rem 0.25rem;
 }
+
+/* Utility Classes */
+
+.hidden {
+    display: hidden;
+}   
+
+.none {
+    display: none;
+}   
+
+.aligner-left {
+    visibility: hidden;
+    float: left;
+    display: flex;
+    flex: wrap;
+    margin-left: 1rem;
+    width: 8rem;
+}
+
+.aligner-right {
+    visibility: hidden;
+    float: right;
+    display: flex;
+    flex: wrap;
+    margin-right: 1rem;
+    width: 8rem;
+}

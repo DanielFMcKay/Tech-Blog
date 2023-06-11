@@ -5,11 +5,11 @@ const seedBlogs = require('./blogData');
 const seedData = async () => {
   await sequelize.sync({ force: true });
 
-  await seedUsers();
   
-//   may need to change the bit below
   await seedBlogs();
-
+  
+  await seedUsers();
+  console.log("database seeded!");
   process.exit(0);
 };
 

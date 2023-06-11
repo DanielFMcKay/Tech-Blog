@@ -1,9 +1,9 @@
 const loginSubmitBtn = document.querySelectorAll(".login-submit-button")[0];
 const loginBtn = document.querySelectorAll(".login-button")[0];
 
-const signUpEmail = $(".sign-up-email-field").val();
-signUpEmail.value = signUpEmail.toLowerCase();
-signUpEmail.value = signUpEmail?.trim();
+// const signUpEmail = $(".sign-up-email-field").val();
+// signUpEmail.value = signUpEmail.toLowerCase();
+// signUpEmail.value = signUpEmail?.trim();
 
 const signUpButton = document.querySelectorAll(".sign-up-button")[0];
 const signUpTile = document.querySelectorAll("#signUpTile")[0];
@@ -81,35 +81,37 @@ const attemptLogin = async () => {
 
 const attemptSignUp = async () => {
 
-    const user_name = document.querySelector('.sign-up-username-field');
-    const email = document.querySelector('.sign-up-email-field');
-    const password = document.querySelector('.sign-up-password-field');
+    const signUpUsername = document.querySelector('.sign-up-username-field');
+    const signUpEmail = document.querySelector('.sign-up-email-field');
+    const signUpPassword = document.querySelector('.sign-up-password-field');
 
-    email.value = email.value.trim();
-    email.value = email.value.toLowerCase();
-    password.value = password.value.trim();
+    signUpEmail.value = signUpEmail.value.trim();
+    signUpEmail.value = signUpEmail.value.toLowerCase();
+    signUpPassword.value = signUpPassword.value.trim();
 
 
     // Create a data object with the input values
     const userData = {
-        user_name: user_name.value,
-        email: email.value,
-        password: password.value
+        username: signUpUsername.value,
+        email: signUpEmail.value,
+        password: signUpPassword.value
     };
-    // Dan's validity checks
-    if (user_name.value === "" || email.value === "" || password.value === "") {
+
+    console.log(userData + " is userData for attemptSignUp");
+    // some validity checks
+    if (signUpUsername.value === "" || signUpEmail.value === "" || signUpPassword.value === "") {
         return;
-    } else if (email.value.indexOf('@') < 1 || email.value.indexOf('.') < 1 || email.value.lastIndexOf('.') < email.value.indexOf('@')) {
+    } else if (signUpEmail.value.indexOf('@') < 1 || signUpEmail.value.indexOf('.') < 1 || signUpEmail.value.lastIndexOf('.') < signUpEmail.value.indexOf('@')) {
         alert("Please enter a valid email 🔱");
         return;
     } else if
-        (password.value.length < 6) {
+        (signUpPassword.value.length < 6) {
         alert("Please use at least 6 characters for your password")
         return;
     };
     try {
         // Send the POST request to your server endpoint
-        const response = await fetch('/api', {
+        const response = await fetch('/api/user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -117,7 +119,7 @@ const attemptSignUp = async () => {
             body: JSON.stringify(userData)
         });
         if (!response.ok) {
-            alert("Sorry, that email is already in use")
+            alert("Sorry, that email is already in use");
         } else if (response.ok) { alert("Sign up successful! Please sign in!") };
         // Handle the response as needed
         const responseData = await response.json();

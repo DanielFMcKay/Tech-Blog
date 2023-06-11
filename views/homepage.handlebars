@@ -1,16 +1,26 @@
 <header>
     <div class="navbar">
+        {{#if logged_in}}
+                <button class="aligner-left">Aligner</button>
+        <div class="button-row none">
 
-        <div class="button-row">
-            <button class="login-button">Login</button>
-            <button class="sign-up-button">Sign Up</button>
+            {{else}}
+            <div class="button-row">
+                {{/if}}
+                <button class="login-button">Login</button>
+                <button class="sign-up-button">Sign Up</button>
+            </div>
+
+            <h1 class="tech-blog-title">Dan's Random Tech Blog</h1>
+
+            {{#if logged_in}}
+            <button class="logoutBtn">Logout</button>
+            {{else}}
+            <button class="logoutBtn none">Logout</button>
+            <button class="aligner-right">Aligner</button>
+            {{/if}}
+
         </div>
-
-        <h1 class="tech-blog-title">Dan's Random Tech Blog</h1>
-
-        <button class="logoutBtn">Logout</button>
-
-    </div>
 </header>
 
 {{!-- like, tech blog core is below, will add later --}}
