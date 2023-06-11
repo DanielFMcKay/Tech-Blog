@@ -1,23 +1,9 @@
-const loginEmail = $(".login-email-field").val();
-loginEmail.value = loginEmail.toLowerCase();
-loginEmail.value = loginEmail?.trim();
-
-const loginPassword = $(".login-password-field").val();
-loginPassword.value = loginPassword?.trim();
-
 const loginSubmitBtn = document.querySelectorAll(".login-submit-button")[0];
 const loginBtn = document.querySelectorAll(".login-button")[0];
-
-const signUpUsername = $(".sign-up-username-field").val();
-signUpUsername.value = signUpUsername?.trim();
 
 const signUpEmail = $(".sign-up-email-field").val();
 signUpEmail.value = signUpEmail.toLowerCase();
 signUpEmail.value = signUpEmail?.trim();
-
-const signUpPassword = $(".sign-up-password-field").val();
-signUpPassword.value = signUpPassword?.trim();
-
 
 const signUpButton = document.querySelectorAll(".sign-up-button")[0];
 const signUpTile = document.querySelectorAll("#signUpTile")[0];
@@ -49,19 +35,19 @@ closeLoginPopup.onclick = function () {
     loginTile.style.display = "none";
 };
 
-window.onclick = function (event) {
-    if (event.target == loginTile) {
-        loginTile.style.display = "none";
-    }
-    console.log("login tile closed")
-};
+// window.onclick = function (event) {
+//     if (event.target == loginTile) {
+//         loginTile.style.display = "none";
+//     }
+//     console.log("login tile closed")
+// };
 
-window.onclick = function (event) {
-    if (event.target == signUpTile) {
-        signUpTile.style.display = "none";
-    }
-    console.log("sign-up tile closed")
-};
+// window.onclick = function (event) {
+//     if (event.target == signUpTile) {
+//         signUpTile.style.display = "none";
+//     }
+//     console.log("a tile closed")
+// };
 
 
 
@@ -69,8 +55,15 @@ window.onclick = function (event) {
 
 const attemptLogin = async () => {
 
-    if (loginEmail && loginPassword) {
-        const loginResponse = await fetch("/api/users/login", {
+    let email = $(".login-email-field").val();
+    email.value = email.toLowerCase();
+    email.value = email?.trim();
+
+    const password = $(".login-password-field").val();
+    password.value = password?.trim();
+
+    if (email && password) {
+        const loginResponse = await fetch("/api/user/login", {
             method: "POST",
             body: JSON.stringify({ email, password }),
             headers: { "Content-Type": "application/json" },
@@ -87,35 +80,36 @@ const attemptLogin = async () => {
 };
 
 const attemptSignUp = async () => {
-    const usernameInput = document.querySelector('.sign-up-username-field');
-    const emailInput = document.querySelector('.sign-up-email-field');
-    const passwordInput = document.querySelector('.sign-up-password-field');
 
-    emailInput.value = emailInput.value.trim();
-    emailInput.value = emailInput.value.toLowerCase();
-    passwordInput.value = passwordInput.value.trim();
+    const user_name = document.querySelector('.sign-up-username-field');
+    const email = document.querySelector('.sign-up-email-field');
+    const password = document.querySelector('.sign-up-password-field');
+
+    email.value = email.value.trim();
+    email.value = email.value.toLowerCase();
+    password.value = password.value.trim();
 
 
     // Create a data object with the input values
     const userData = {
-        user_name: usernameInput.value,
-        email: emailInput.value,
-        password: passwordInput.value
+        user_name: user_name.value,
+        email: email.value,
+        password: password.value
     };
     // Dan's validity checks
-    if (usernameInput.value === "" || emailInput.value === "" || passwordInput.value === "") {
+    if (user_name.value === "" || email.value === "" || password.value === "") {
         return;
-    } else if (emailInput.value.indexOf('@') < 1 || emailInput.value.indexOf('.') < 1 || emailInput.value.lastIndexOf('.') < emailInput.value.indexOf('@')) {
+    } else if (email.value.indexOf('@') < 1 || email.value.indexOf('.') < 1 || email.value.lastIndexOf('.') < email.value.indexOf('@')) {
         alert("Please enter a valid email 🔱");
         return;
     } else if
-        (passwordInput.value.length < 6) {
+        (password.value.length < 6) {
         alert("Please use at least 6 characters for your password")
         return;
     };
     try {
         // Send the POST request to your server endpoint
-        const response = await fetch('/api/users', {
+        const response = await fetch('/api', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -136,7 +130,7 @@ const attemptSignUp = async () => {
 
 
 const logout = async () => {
-    const response = await fetch("/api/users/logout", {
+    const response = await fetch("/api/user/logout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
     });
@@ -151,12 +145,20 @@ const logout = async () => {
 
 
 loginSubmitBtn.addEventListener("click", function () {
+    let email = $(".login-email-field").val();
+    email.value = email.toLowerCase();
+    email.value = email?.trim();
+
+    const password = $(".login-password-field").val();
+    password.value = password?.trim();
     // stops process and does nothing if nothing is entered for either field
-    if (loginEmail === "" || loginPassword === "") {
+    if (email === "" || password === "") {
+        console.log("field missing");
         return;
     } else {
+        console.log("login submit button clicked")
         // else tries to login the user
-        attemptLogin(loginEmail, loginPassword);
+        attemptLogin(email, password);
     }
 });
 
@@ -169,9 +171,17 @@ $('.login-password-field').keydown(function (event) {
     }
 });
 
+$('.sign-up-password-field').keydown(function (event) {
+    // If the user presses the "Enter" key on the keyboard
+    if (event.key === "Enter") {
+        // Trigger the button element with a click
+        signUpSubmitBtn.click();
+    }
+});
 
-document.querySelector('.login-button').addEventListener("click", attemptLogin);
-document.querySelector('.sign-up-button').addEventListener("click", attemptSignUp);
+
+document.querySelector('.login-submit-button').addEventListener("click", attemptLogin);
+document.querySelector('.sign-up-submit-button').addEventListener("click", attemptSignUp);
 document.querySelector('.logoutBtn').addEventListener("click", logout);
 
 // Closes sign-up modal with Escape key if in password field specifically
