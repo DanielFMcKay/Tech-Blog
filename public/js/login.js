@@ -111,7 +111,7 @@ const attemptSignUp = async () => {
     };
     try {
         // Send the POST request to your server endpoint
-        const response = await fetch('/api/user', {
+        const response = await fetch('/api/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -132,7 +132,7 @@ const attemptSignUp = async () => {
 
 
 const logout = async () => {
-    const response = await fetch("/api/user/logout", {
+    const response = await fetch("/api/users/logout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
     });

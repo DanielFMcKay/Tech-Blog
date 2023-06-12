@@ -27,7 +27,7 @@ Blog.init(
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    id: {
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
@@ -40,7 +40,7 @@ Blog.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'blog',
+    modelName: 'blogs',
   }
 );
 
