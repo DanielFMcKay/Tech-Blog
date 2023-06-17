@@ -111,7 +111,7 @@ const attemptSignUp = async () => {
     };
     try {
         // Send the POST request to your server endpoint
-        const response = await fetch('/api/users', {
+        const response = await fetch('/api/user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -125,14 +125,14 @@ const attemptSignUp = async () => {
         const responseData = await response.json();
         console.log(responseData);
     } catch (error) {
-        console.error(error);
+        console.error("error is" + error);
     }
     // would be nice if I could slip a location.reload() in here
 };
 
 
 const logout = async () => {
-    const response = await fetch("/api/users/logout", {
+    const response = await fetch("/api/user/logout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
     });

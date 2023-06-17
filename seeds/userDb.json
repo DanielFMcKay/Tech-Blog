@@ -1,27 +1,27 @@
-    [
-        {
-            "username": "Edgelord69420",
-            "email": "edgymcedgelord@example.com",
-            "password": "horsebatterystaple"
-        },
-        {
-            "username": "Vapelord42069",
-            "email": "kushmaster42@example.com",
-            "password": "itsjusttobacco"
-        },
-        {
-            "username": "Y2J",
-            "email": "wallsofjericho@example.com",
-            "password": "stepinthearena"
-        },
-        {
-            "username": "SpookyForestWitch",
-            "email": "GaiaBoudica@tumblr.net",
-            "password": "itsnotaphasemom!"
-        },
-        {
-            "username": "ExampleUser1",
-            "email": "example1@example.org",
-            "password": "ClevelandRocks!"
-        }
-    ]
+[
+    {
+        "username": "Edgelord69420",
+        "email": "edgymcedgelord@example.com",
+        "password": "horsebatterystaple"
+    },
+    {
+        "username": "Vapelord42069",
+        "email": "kushmaster42@example.com",
+        "password": "itsjusttobacco"
+    },
+    {
+        "username": "Y2J",
+        "email": "wallsofjericho@example.com",
+        "password": "stepinthearena"
+    },
+    {
+        "username": "SpookyForestWitch",
+        "email": "GaiaBoudica@tumblr.net",
+        "password": "itsnotaphasemom!"
+    },
+    {
+        "username": "ExampleUser1",
+        "email": "example1@example.org",
+        "password": "ClevelandRocks!"
+    }
+]

@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 // const seedBlogs = require('./blogData');
 const { User, Blog } = require('../models');
 
+// test insert JSON
 const userData = require('./userDb.json');
 const blogData = require('./blogDb.json');
 
