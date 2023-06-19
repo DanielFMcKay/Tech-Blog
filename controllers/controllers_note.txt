@@ -1,0 +1,2 @@
+All traditional ./controllers files are in the "routes" folder.
+This is a placeholder in case I change my mind.

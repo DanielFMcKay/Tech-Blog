@@ -4,12 +4,14 @@ const { Blog, User } = require("../models");
 
 router.get("/", async (req, res) => {
     try {
+      // Get all projects and JOIN with user data
 
-
+      
         console.log("homepage");
         res.render("homepage", {
 
             logged_in: req.session.logged_in,
+            username: req.session.username,
             title: "Tech Blog",
         });
     } catch (err) {

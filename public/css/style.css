@@ -1,14 +1,21 @@
 /* CSS goes here */
 
 html {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(0.39turn,#65daad,#b5f6dd 80%,#ecfff8 92%, #0fe3ff);
+    background: transparent;
     height: 100%;
+}
+
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(0.39turn,#65daad,#b5f6dd 80%,#ecfff8 92%, #078a88);
+    background-size: cover;
+
     border-top: 2px solid #3a4558;
 }
 
 .navbar {
-    background: linear-gradient(0.49turn, #ecdda7 20%, #c6dfe8 55%, #fff9e4);
+    position: relative;
+    background: linear-gradient(0.49turn, #ecdda7 25%, #c6dfe8 75%, #fff9e4);
     border-radius: 0.5rem 0.5rem 0 0;
     padding: 0.5rem;
     margin-bottom: 1rem;
@@ -17,11 +24,31 @@ html {
 }
 
 .tech-blog-title {
+    color: #424140;
+    position: fixed;
+    left: 16%;
     font-family: 'Roboto Slab', Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 3rem;
+    font-size: 2rem;
     text-shadow: 1px 1px 1px #5f676d;
 }
 
+.tech-blog-title:hover {
+    color: #306f49;
+    text-shadow: 1px 1px 1px #85bda2, 1px 1px 2px #85bda2, 1px 1px 4px #85bda2,;
+    cursor: pointer;
+}
+
+.loggedInStatus {
+    position: fixed;
+    right: 14%;
+    font-size: 1rem;
+    color: #353160;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px #b0b0b0;
+    margin-bottom: 0.5rem;
+    margin-top: 1.75rem;
+    text-align: center;
+}
 
 .logoutBtn {
     font-size: 1.2rem;
@@ -269,6 +296,62 @@ html {
     text-shadow: 0 0 2px #5c85b3;
     padding: 0.2rem 0.25rem 0.4rem 0.25rem;
 }
+
+#enterTechBlog {
+    background: linear-gradient(0.4turn, #a1a0a0 20%, #fcfcfc 70%, #b0b0b0 98%);
+    width: 40rem;
+    min-height: 12rem;
+    align-self: center;
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12rem;
+    border-radius: 3rem;
+    border: 0.25rem solid #363636;
+}
+
+.enter-note {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #353160;
+    text-shadow: 1px 1px 1px #5d5d5d;
+    font-weight: 400;
+}
+
+.tech-blog-entrance-title {
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+    font-family: 'Roboto Slab', Verdana, Geneva, Tahoma, sans-serif;
+    color: #1d1e1e;
+    text-shadow: 2px 2px 2px #4b4d4d;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+ }
+
+ .blog-enter-button {
+    justify-self: center;
+    font-size: 1.4rem;
+    margin-left: 38%;
+    margin-right: 38%;
+    margin-bottom: 0.5rem;
+    min-width: 10rem;
+    color: #f8f8f8;
+    text-shadow: 0 0 1px #add8e6, 0 0 2px #add8e6;
+    background: linear-gradient(#4646ff, #9091ce);
+    border: 2px solid #676767;
+    border-radius: 0.8rem;
+    padding: 0.45rem 0.9rem;
+  }
+
+  .blog-enter-button:hover {
+    color: white;
+    background: linear-gradient(rgb(13, 13, 255), #7a7cd4);
+    text-shadow: 0 0 1px #add8e6, 0 0 2px #add8e6, 0 0 4px #add8e6, 0 0 6px #add8e6;
+    border: 2px solid #0c0c0c;
+    box-shadow: 2px 2px 2px #5f5aa3;
+}
+
 
 /* Utility Classes */
 

@@ -18,6 +18,7 @@ router.post('/', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
+      req.session.username = userData.username;
       console.log("logged in via post route X");
     });
 
@@ -78,7 +79,8 @@ router.post('/login', async (req, res) => {
   router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
       req.session.destroy(() => {
-        res.status(204).end();
+        res.status(204).end()
+        // sends back to homepage if not already there 
       });
     } else {
       res.status(404).end();
