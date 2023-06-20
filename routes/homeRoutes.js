@@ -7,7 +7,7 @@ router.get("/", async (req, res) => {
       // Get all projects and JOIN with user data
 
       
-        console.log("homepage");
+        console.log("this is the homepage");
         res.render("homepage", {
 
             logged_in: req.session.logged_in,
