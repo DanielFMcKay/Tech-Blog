@@ -27,10 +27,14 @@ User.init(
             type: DataTypes.STRING(60),
             allowNull: false,
             unique: true,
+            validate: {
+                isEmail: true,
+            },
         },
         password: {
             type: DataTypes.STRING(60),
             allowNull: false,
+            len: [6],
         },
 
     },

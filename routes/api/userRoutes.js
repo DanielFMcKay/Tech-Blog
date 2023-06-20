@@ -43,6 +43,7 @@ router.post('/login', async (req, res) => {
   
       console.log(userData.password + " is userData.password");
       console.log(req.body.password + " is req.body.password");
+      console.log(userData.username + " is userData.username");
 
       const validPassword = await userData.checkPassword(req.body.password);
 
