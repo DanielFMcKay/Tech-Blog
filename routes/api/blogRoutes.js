@@ -1,19 +1,44 @@
 const router = require('express').Router();
-const { Blog } = require('../../models');
+const { Blog, User } = require('../../models');
 
-const withAuth = require('../../utils/auth');
+// const withAuth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
-  try {const blogData = await Blog.findAll();
-    res.status(200).json(blogData);
-    console.log(blogData);
+router.get("/blog", async (req, res) => {
+  try {
+    // const menuItems = [];
+    const blogEntries = await Blog.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['username']
+        }
+      ],
+    });
+
+    const blog = blogEntries.get({ plain: true});
+
+    res.render("blog", {
+      ...blog,
+      logged_in: req.session.logged_in,
+      username: req.session.username,
+      title: "Dan's Tech Blog",
+    });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
+// router.get('/', async (req, res) => {
+//   try {const blogData = await Blog.findAll();
+//     res.status(200).json(blogData);
+//     console.log(blogData);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
-router.post('/', withAuth, async (req, res) => {
+
+router.post('/blog', async (req, res) => {
   try {
     const newBlog = await Blog.create({
       ...req.body,
@@ -26,7 +51,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('blog/:id', async (req, res) => {
   try {
     const blogData = await Blog.destroy({
       where: {

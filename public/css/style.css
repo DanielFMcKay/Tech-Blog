@@ -32,9 +32,16 @@ body {
     text-shadow: 1px 1px 1px #5f676d;
 }
 
+.tech-blog-title a {
+    text-decoration: none;
+    color: #424140;
+}
+
+
+
 .tech-blog-title:hover {
-    color: #306f49;
-    text-shadow: 1px 1px 1px #85bda2, 1px 1px 2px #85bda2, 1px 1px 4px #85bda2,;
+    color: #323a35;
+    text-shadow: 1px 1px 1px #63786e, 2px 2px 2px #63786e, 3px 3px 4px #7e9087;
     cursor: pointer;
 }
 
@@ -298,7 +305,7 @@ body {
 }
 
 #enterTechBlog {
-    background: linear-gradient(0.4turn, #a1a0a0 20%, #fcfcfc 70%, #b0b0b0 98%);
+    background: linear-gradient(0.4turn, #a1a0a0 20%, #fbfbfb 70%, #b0b0b0 98%);
     width: 40rem;
     min-height: 12rem;
     align-self: center;
@@ -308,6 +315,11 @@ body {
     margin-bottom: 12rem;
     border-radius: 3rem;
     border: 0.25rem solid #363636;
+}
+
+#enterTechBlog:hover {
+    background: linear-gradient(0.4turn, #acacac 20%, #fdfdfd 70%, #bdbdbd 98%);
+    box-shadow: 3px 3px 3px #4f635a;
 }
 
 .enter-note {
@@ -342,6 +354,11 @@ body {
     border: 2px solid #676767;
     border-radius: 0.8rem;
     padding: 0.45rem 0.9rem;
+  }
+
+  .blog-enter-button a {
+    color: #f8f8f8;
+    text-decoration: none;
   }
 
   .blog-enter-button:hover {
