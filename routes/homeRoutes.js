@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Blog, User } = require("../models");
+const { Blog, User, Comment } = require("../models");
 
 
 router.get("/", async (req, res) => {
@@ -23,14 +23,15 @@ router.get("/", async (req, res) => {
 router.get("/blog", async (req, res) => {
   console.log("this is the blog page, user is " + req.session.username);
   console.log("logged in is " + req.session.logged_in);
+  console.log("user id is " + req.session.user_id);
   try {
     const blogEntries = await Blog.findAll({
-      where: { id: req.params.id },
+      where: { user_id: req.session.user_id },
       attributes: ['id', 'title', 'blog_text', 'date_created', 'likes', 'user_id'],
       include: [
         {
           model: Comment,
-          attributes: ['comment_id', 'comment_text', 'id', 'date_created', 'user_id'],
+          attributes: ['comment_id', 'comment_text', 'blog_id', 'date_created', 'user_id'],
           include: {
             model: User,
             attributes: ['username'],
@@ -42,11 +43,11 @@ router.get("/blog", async (req, res) => {
         },
       ],
     });
-
+    console.log("if (blogEntries) reached");
     if (blogEntries) {
-      const blog = blogEntries.get({ plain: true });
+      const blog = blogEntries.map((blog) => blog.get({ plain: true }));
       console.log("This is the blog rendered: " + blog);
-      res.render("/blog", {
+      res.render("blog", {
 
 
         logged_in: req.session.logged_in,
@@ -59,6 +60,7 @@ router.get("/blog", async (req, res) => {
       return;
     }
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });

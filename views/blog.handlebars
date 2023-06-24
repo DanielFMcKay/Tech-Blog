@@ -1,18 +1,14 @@
 {{!-- placeholder --}}
-<p>test</p>
+
 <section id="techBlogMainContainer">
-    <h3 text-align="center">A Blog Shall Go Here</h3>
-    <h3>test</h3>
-</section>
-<div class="blog-container">
     <div class="blog-header">
-        <h2 class="blog-title">{{blog.title}}</h2>
+        <h2 class="blog-title">A Blog Shall Go Here{{blog.title}}</h2>
     </div>
     <div class="blog-content">
         <div class="blog-post-text">
-            <p>{{blog.blog_text}}</p>
+            <p>test{{blog.blog_text}}</p>
             <div class="blog-post-header">
-                <h3>by {{username}}</h3>
+                <h3 class="blog-user">{{username}}</h3>
                 <h4>
                     {{!-- date created --}}
                 </h4>
@@ -22,7 +18,7 @@
     <div class="blog-comments">
         {{!-- commenting code goes here --}}
     </div>
-</div>
+</section>
 
 {{!-- Sign Up Pop-up Modal --}}
 <div id="signUpTile" class="signup-popup">

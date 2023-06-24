@@ -16,7 +16,7 @@ router.post('/', async (req, res) => {
     const userData = await User.create(req.body);
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      req.session.user_id = userData.user_id;
       req.session.logged_in = true;
       req.session.username = userData.username;
       console.log("logged in via post route X");
@@ -65,7 +65,7 @@ router.post('/login', async (req, res) => {
       }
   
       req.session.save(() => {
-        req.session.user_id = userData.id;
+        req.session.user_id = userData.user_id;
         req.session.logged_in = true;
         console.log("logged in fr fr");
         req.session.username = userData.username;

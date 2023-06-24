@@ -26,7 +26,7 @@ body {
 .tech-blog-title {
     color: #424140;
     position: fixed;
-    left: 16%;
+    left: 12.5%;
     font-family: 'Roboto Slab', Verdana, Geneva, Tahoma, sans-serif;
     font-size: 2rem;
     text-shadow: 1px 1px 1px #5f676d;
@@ -369,6 +369,41 @@ body {
     box-shadow: 2px 2px 2px #5f5aa3;
 }
 
+/* Blog Page Stuff */
+
+#techBlogMainContainer {
+    background: linear-gradient(0.45turn, #cafdeb 20%, #edfff5 70%, #92cfbd 98%);
+    width: 70%;
+    min-height: 10rem;
+    height: fit-content;
+    align-self: center;
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12rem;
+    border-radius: 2rem;
+    border: 0.25rem solid #363636;
+}
+
+.blog-title {
+    font-size: 1.75rem;
+    margin-top: 0.5rem;
+    margin-left: 2.75rem;
+}
+
+.blog-post-text {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+    font-size: 1.25rem;
+}
+
+.blog-user {
+    font-size: 1.25rem;
+    color: #2f2f3a;
+    text-shadow: 1px 1px 1px #777883;
+    margin-left: 2.5rem;
+    margin-bottom: 0.5rem;
+}
 
 /* Utility Classes */
 
