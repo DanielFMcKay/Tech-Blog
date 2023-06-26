@@ -23,6 +23,7 @@ Blog.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
+    // likes may or may not be used
     likes: {
         type: DataTypes.INTEGER,
         allowNull: false,

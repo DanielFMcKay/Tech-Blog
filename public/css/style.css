@@ -47,12 +47,13 @@ body {
 
 .loggedInStatus {
     position: fixed;
-    right: 14%;
+    right: 10%;
     font-size: 1rem;
     color: #353160;
     font-weight: 600;
     text-shadow: 1px 1px 1px #b0b0b0;
     margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
     margin-top: 1.75rem;
     text-align: center;
 }
@@ -79,6 +80,9 @@ body {
     text-shadow: 0 0 1px #ececec, 0 0 2px #ececec, 0 0 3px #ffe1e1;
     border: 2px solid #4b4747;
     box-shadow: 2px 2px 2px #4b4747;
+    margin-bottom: 2px;
+    margin-right: 0.625rem;
+    padding: 0.2rem 0.55rem 0.4rem 0.55rem;
 }
 
 
@@ -385,6 +389,65 @@ body {
     border: 0.25rem solid #363636;
 }
 
+.blog-header-row {
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.blog-button-row {
+    position: relative;
+    top: -2.5rem;
+    right: 0.75rem;
+    justify-content: space-between;
+    flex-direction: row;
+    float: right;
+}
+
+.post-blog-button,
+.edit-blog-button,
+.delete-blog-button {
+    color: #1d1d1d;
+    font-size: 1.75 rem;
+    font-weight: 600;
+    margin: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    border: 3px solid #141414;
+    min-width: 6rem;
+}
+
+.post-blog-button {
+    background: linear-gradient(0.47turn, #3fb968,#6ce293);
+}
+.post-blog-button:hover {
+    background: linear-gradient(0.47turn, #71e096,#c7ffda);
+}
+
+.edit-blog-button {
+    background: linear-gradient(0.47turn, #7c5fe2, #cec2fa);
+}
+.edit-blog-button:hover {
+    background: linear-gradient(0.47turn, #a28af7, #ebe6ff);
+}
+
+.delete-blog-button {
+    background: linear-gradient(0.47turn, #e25f5f, #eec1c1);
+}
+.delete-blog-button:hover {
+    background: linear-gradient(0.47turn, #f38e8e, #ffeaea);
+}
+
+
+.post-blog-button:hover,
+.edit-blog-button:hover,
+.delete-blog-button:hover {
+    color: #040404;
+    box-shadow: 3px 3px 3px #8f978f;
+    border: 3px solid #020202;
+}
+
+
+
+
 .blog-title {
     font-size: 1.75rem;
     margin-top: 0.5rem;
@@ -398,11 +461,12 @@ body {
 }
 
 .blog-user {
+    position: relative;
     font-size: 1.25rem;
     color: #2f2f3a;
     text-shadow: 1px 1px 1px #777883;
-    margin-left: 2.5rem;
-    margin-bottom: 0.5rem;
+    left: 2.5rem;
+    bottom: -1rem;
 }
 
 /* Utility Classes */

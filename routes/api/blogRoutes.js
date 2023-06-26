@@ -1,10 +1,11 @@
 const router = require('express').Router();
-const { Blog, User } = require('../../models');
+// So far only the Blog model is being used here, but the others may be used in the future
+const { Blog, User, Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 
 
-
-router.post('/blog', async (req, res) => {
+router.post('/blog', withAuth, async (req, res) => {
   try {
     const newBlog = await Blog.create({
       ...req.body,
@@ -17,8 +18,8 @@ router.post('/blog', async (req, res) => {
   }
 });
 
-// for Editing in the future. May require withAuth
-router.put('/:id', async (req, res) => {
+// for Editing in the future. May or may not keep withAuth
+router.put('/:id', withAuth, async (req, res) => {
   try {
     const updateBlog = await Blog.update(
       {
@@ -33,7 +34,7 @@ router.put('/:id', async (req, res) => {
       }
     );
     if (!updateBlog) {
-      res.status(404).json({ message: 'Oh nyo! Blog missing! Delete C:/Windows/System32 Commence!!' });
+      res.status(404).json({ message: 'Oh no! Blog missing! Delete C:/Windows/System32 Commence!!' });
       return;
     }  
     res.status(200).json(updateBlog);
@@ -42,7 +43,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-router.delete('blog/:id', async (req, res) => {
+router.delete('blog/:id', withAuth, async (req, res) => {
   try {
     const blogData = await Blog.destroy({
       where: {

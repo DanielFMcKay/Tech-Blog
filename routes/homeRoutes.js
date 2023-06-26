@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Blog, User, Comment } = require("../models");
+const withAuth = require('../utils/auth');
 
 
 router.get("/", async (req, res) => {
@@ -20,7 +21,7 @@ router.get("/", async (req, res) => {
 });
 
 // this is for later
-router.get("/blog", async (req, res) => {
+router.get("/blog", withAuth, async (req, res) => {
   console.log("this is the blog page, user is " + req.session.username);
   console.log("logged in is " + req.session.logged_in);
   console.log("user id is " + req.session.user_id);
@@ -45,11 +46,11 @@ router.get("/blog", async (req, res) => {
     });
     console.log("if (blogEntries) reached");
     if (blogEntries) {
-      const blog = blogEntries.map((blog) => blog.get({ plain: true }));
-      console.log("This is the blog rendered: " + blog);
+      const blogs = blogEntries.map((blog) => blog.get({ plain: true }));
+      console.log("This is the blog rendered");
       res.render("blog", {
 
-
+        blogs,
         logged_in: req.session.logged_in,
         username: req.session.username,
         title: "Dan's Tech Blog",

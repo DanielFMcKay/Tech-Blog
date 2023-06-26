@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Slab">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Slab">
     <link rel="stylesheet" href="./css/style.css">
     <title>{{title}}</title>
 </head>
 <header>
     <div class="navbar">
         {{#if logged_in}}
-                <button class="aligner-left">Aligner</button>
+        <button class="aligner-left">Aligner</button>
         <div class="button-row none">
 
             {{else}}
@@ -35,6 +35,33 @@
             <button class="logoutBtn none">Logout</button>
             <button class="aligner-right">Aligner</button>
             {{/if}}
+        </div>
+        {{!-- Sign Up Pop-up Modal --}}
+        <div id="signUpTile" class="signup-popup">
+
+            <div class="sign-up-container">
+                <div class="close-sign-up-popup"> ✕</div>
+                <p>Sign Up Today! Please Enter Your<br>Username and Email</p>
+                <div class="signup-column">
+                    <input type="text" class="sign-up-username-field" placeholder=" please enter your username" />
+                    <input type="email" class="sign-up-email-field" placeholder=" enter your email" />
+                    <input type="password" class="sign-up-password-field" placeholder=" enter a password" />
+                    <button class="sign-up-submit-button">Submit</button>
+                </div>
+            </div>
+        </div>
+
+        {{!-- Login Pop-up Modal --}}
+        <div class="login-input-tile">
+            <div class="login-container">
+                <div class="close-login-popup"> ✕</div>
+                <p>Please Enter Your Email and <br>Password to Login</p>
+                <div class="input-fields-column">
+                    <input type="text" placeholder="login with email" class="login-email-field">
+                    <input type="password" placeholder="password" class="login-password-field">
+                    <button class="login-submit-button">Login</button>
+                </div>
+            </div>
         </div>
 </header>
 
