@@ -13,7 +13,7 @@ const blogPoster = async () => {
         document.location.replace('/blog');
     }
     else {
-        alert(response.statusText + "An error occured while posting. Please pray");
+        alert(response.statusText + "An error occured while posting. Please pray to your ancestors");
     }
 };
 

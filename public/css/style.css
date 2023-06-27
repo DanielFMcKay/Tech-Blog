@@ -9,18 +9,18 @@ body {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(0.39turn,#65daad,#b5f6dd 80%,#ecfff8 92%, #078a88);
     background-size: cover;
-
     border-top: 2px solid #3a4558;
 }
 
 .navbar {
-    position: relative;
+    position: fixed;
     background: linear-gradient(0.49turn, #ecdda7 25%, #c6dfe8 75%, #fff9e4);
     border-radius: 0.5rem 0.5rem 0 0;
     padding: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 10rem;
     box-shadow: 0 0 1px transparent;
     border-bottom: 2px solid #3a4558;
+    width: 100%;
 }
 
 .tech-blog-title {
@@ -39,23 +39,26 @@ body {
 
 
 
-.tech-blog-title:hover {
-    color: #323a35;
-    text-shadow: 1px 1px 1px #63786e, 2px 2px 2px #63786e, 3px 3px 4px #7e9087;
+.tech-blog-title a:hover {
+    color: #01866e;
+    text-shadow: 1px 1px 1px #6b8c7b, 2px 2px 2px #6b8c7b, 3px 3px 4px #6b8c7b;
     cursor: pointer;
 }
 
 .loggedInStatus {
     position: fixed;
-    right: 10%;
+    right: 16rem;
     font-size: 1rem;
-    color: #353160;
+    color: #1b293d;
     font-weight: 600;
     text-shadow: 1px 1px 1px #b0b0b0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     margin-right: 0.5rem;
-    margin-top: 1.75rem;
+    margin-top: 1.5rem;
     text-align: center;
+    max-width: 10rem;
+    line-height: 1.25rem;
+    text-overflow: wrap;
 }
 
 .logoutBtn {
@@ -85,6 +88,44 @@ body {
     padding: 0.2rem 0.55rem 0.4rem 0.55rem;
 }
 
+.new-blog-redirect {
+    position: fixed;
+    right: 6.25rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: linear-gradient(0.9turn, #3641e0 20%, #95cad8 60%, #81ccde 97%);
+    border-radius: 0.45rem 0.5rem;
+    border: 3px solid #2e2e2e;
+    text-align: center;
+    padding: 0.2rem 0.5rem 0.4rem 0.5rem;
+    box-shadow: 0 0 1px transparent;
+    margin-top: 0rem;
+    margin-left: 0.25rem;
+    margin-right: 0.5rem;
+}
+
+.new-blog-redirect:hover {
+    background: linear-gradient(0.9turn, #4854fa 20%, #bce8f4 60%, #a8e7f6 97%);
+    box-shadow: 2px 2px 2px #4b4747;
+}
+
+
+.new-blog-redirect a {
+
+    color: #efefef;
+    text-decoration: none;
+    text-shadow: 0 0 1px #0a0a0a;
+}
+
+.new-blog-redirect a:hover {
+    color: #21272d;
+    text-shadow: 0 0 1px #000000;
+}
+
+.top-spacer {
+    background: transparent;
+    height: 4.75rem;
+}
 
 .login-email-field,
 .login-password-field,
@@ -377,26 +418,29 @@ body {
 
 #techBlogMainContainer {
     background: linear-gradient(0.45turn, #cafdeb 20%, #edfff5 70%, #92cfbd 98%);
-    width: 70%;
+    width: 80%;
     min-height: 10rem;
     height: fit-content;
     align-self: center;
     margin-top: 3rem;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 12rem;
-    border-radius: 2rem;
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+    border-radius: 2rem 2rem 0 0;
     border: 0.25rem solid #363636;
+    border-bottom: 1px dashed #363636;
 }
 
 .blog-header-row {
     justify-content: space-between;
     flex-direction: row;
+    margin-bottom: 0.5rem;
 }
 
 .blog-button-row {
     position: relative;
-    top: -2.5rem;
+    top: 0rem;
     right: 0.75rem;
     justify-content: space-between;
     flex-direction: row;
@@ -409,17 +453,10 @@ body {
     color: #1d1d1d;
     font-size: 1.75 rem;
     font-weight: 600;
-    margin: 0.25rem 0.5rem;
+    margin: 0.25rem;
     border-radius: 0.5rem;
     border: 3px solid #141414;
     min-width: 6rem;
-}
-
-.post-blog-button {
-    background: linear-gradient(0.47turn, #3fb968,#6ce293);
-}
-.post-blog-button:hover {
-    background: linear-gradient(0.47turn, #71e096,#c7ffda);
 }
 
 .edit-blog-button {
@@ -441,7 +478,6 @@ body {
 .edit-blog-button:hover,
 .delete-blog-button:hover {
     color: #040404;
-    box-shadow: 3px 3px 3px #8f978f;
     border: 3px solid #020202;
 }
 
@@ -449,15 +485,18 @@ body {
 
 
 .blog-title {
-    font-size: 1.75rem;
+    font-size: 1.7rem;
     margin-top: 0.5rem;
     margin-left: 2.75rem;
+    text-shadow: 1px 1px 1px #b3c9bd;
+    max-width: 70%
 }
 
 .blog-post-text {
+    padding-top: 0.25rem;
     margin-left: 1.25rem;
     margin-right: 1.25rem;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
 }
 
 .blog-user {
@@ -467,6 +506,132 @@ body {
     text-shadow: 1px 1px 1px #777883;
     left: 2.5rem;
     bottom: -1rem;
+}
+
+#blog-comments-container {
+    background: linear-gradient(0.47turn, #d2d9ee 18%, #f0f3fe 50%, #9fb7e8 96%);
+    width: 80%;
+    min-height: 4rem;
+    height: fit-content;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.75rem;
+    padding-bottom: 2.25rem;
+    border-radius: 0 0 2rem 2rem;
+    border: 0.25rem solid #363636;
+    border-top: 1px dashed #363636;
+}
+
+#blog-comments-container h3 {
+    margin-left: 1.25rem;
+    margin-top: 0.25rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+#blog-comments-container p {
+    margin-left: 1.25rem;
+    font-weight: 600;
+    font-size: 1rem;
+}
+/* New Blog page styling */
+
+.new-blog-page-header {
+    color: #272828;
+    font-size: 1.8rem;
+    font-weight: 600;
+    position: relative;
+    left: 12%;
+    text-shadow: 2px 2px 2px #505852;
+    margin-top: -0.5rem;
+}
+
+.new-blog-page-header:hover {
+    color: #393d3a;
+    text-shadow: 1px 1px 1px #64977c;
+}
+
+
+#newBlogContainer {
+    background: linear-gradient(0.45turn, #59e3cc 10%, #edfffc 40%, #d2f9f3 60%, #3fcab3 90%);
+    width: 80%;
+    height: fit-content;
+    min-height: 8rem;
+    align-self: center;
+    margin-top: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 2rem;
+    border-radius: 1rem;
+    border: 0.25rem solid #363636;
+    padding: 0.2rem;
+}
+
+.blog-input-stack {
+    display: column;
+    flex-direction: column;
+}
+
+.new-blog-name {
+    color: #1d1d1d;
+    background-color: #f1fcf4;;
+    font-size: 1.4rem;
+    font-weight: 600;
+    min-width: 35%;
+    max-width: fit-content;
+    margin: 0.25rem 1rem 2px 1rem;
+    border-radius: 0.5rem 0.25rem 0.25rem 0.25rem;
+    padding: 2px;
+    padding-left: 0.5rem;
+    padding-bottom: 0.25rem;
+}
+
+.new-blog-name:hover {
+    background-color: #ffffff;;
+}
+
+.post-blog-button {
+    background: linear-gradient(0.47turn, #5ee089,#bed5c6);
+    position: relative;
+    top: 0;
+    right: -0.25rem;
+    float: right;
+}
+
+.post-blog-button:hover {
+    background: linear-gradient(0.47turn, #71e096,#c7ffda);
+    box-shadow: 3px 3px 3px #595a5a;
+}
+
+.new-blog-text {
+    color: #0c0c0c;
+    background-color: #f1fcf4;;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0.25rem 1rem;
+    border-radius: 0.25rem 0.25rem 0.25rem 1rem;
+    min-height: 8rem;
+    min-width: 80%;
+    padding: 2px 4px;
+}
+
+.new-blog-text:hover {
+    background-color: #ffffff;;
+}
+
+.blog-page-redirect {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1d1d1d;
+    padding: 2px;
+    position: fixed;
+    top: 5rem;
+    left: 0.5rem;
+    width: 7rem;
+    min-width: 5%;
+    border-radius: 0.25rem;
+    background: linear-gradient(0.45turn, #ede9bb, #ffffef)
 }
 
 /* Utility Classes */

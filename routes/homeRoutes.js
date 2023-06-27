@@ -20,14 +20,14 @@ router.get("/", async (req, res) => {
   }
 });
 
-// this is for later
+// this gets the rendered blog posts
 router.get("/blog", withAuth, async (req, res) => {
   console.log("this is the blog page, user is " + req.session.username);
   console.log("logged in is " + req.session.logged_in);
   console.log("user id is " + req.session.user_id);
   try {
     const blogEntries = await Blog.findAll({
-      where: { user_id: req.session.user_id },
+      // where: { user_id: req.session.user_id },
       attributes: ['id', 'title', 'blog_text', 'date_created', 'likes', 'user_id'],
       include: [
         {
@@ -55,7 +55,7 @@ router.get("/blog", withAuth, async (req, res) => {
         username: req.session.username,
         title: "Dan's Tech Blog",
       });
-    } 
+    }
     else {
       res.status(404).json({ message: 'No blog found! The Illuminati are nigh!' });
       return;
@@ -66,5 +66,19 @@ router.get("/blog", withAuth, async (req, res) => {
   }
 });
 
+
+router.get("/new-blog", withAuth, async (req, res) => {
+  console.log("this is the new blog page");
+  try {
+    res.render("new-blog", {
+
+      logged_in: req.session.logged_in,
+      username: req.session.username,
+      title: "Tech Blog - Create Post",
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;

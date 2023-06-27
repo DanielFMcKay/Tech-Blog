@@ -1,30 +1,31 @@
-
 {{#each blogs as |blog| }}
 <section id="techBlogMainContainer">
     <div class="blog-header-row">
-        <h2 class="blog-title">A Blog Shall Go Here{{blog.title}}</h2>
+
         <div class="blog-button-row">
-            <button class="post-blog-button">Post Blog</button>
+
             <button class="edit-blog-button">Edit</button>
             <button class="delete-blog-button">Delete</button>
         </div>
+                <h2 class="blog-title">{{blog.title}}</h2>
     </div>
     <div class="blog-content">
         <div class="blog-post-text">
-            <p>test{{blog.blog_text}}</p>
-            <div class="blog-post-header">
-                <h3 class="blog-user">{{username}}</h3>
-                <h4>
-                    date created
-                </h4>
-            </div>
+            <p placeholder="test">{{blog.blog_text}}</p>
+            <h3 class="blog-user">by {{user.username}}</h3><br>
+            <p>
+                Date Created: {{format_date date_created}}
+            </p>
         </div>
     </div>
-    <div class="blog-comments">
-        commenting code goes here
+    </section>
+    {{!-- {{#each comments as |comment| }} --}}
+    <div id="blog-comments-container">
+        <h3>Comments</h3>
+        {{!-- <p>• {{user.username}}: {{comment.comment_text}}</p> --}}
     </div>
+    {{!-- {{/each}} --}}
     {{/each}}
-</section>
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

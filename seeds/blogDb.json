@@ -7,8 +7,20 @@
     },
     {
         "title": "where were u when club penguin die?",
-        "blog_text": "I was at house eating dorito when phone ring\n'club penguin is kill'\n'no'",
+        "blog_text": "I was at house eating dorito when phone ring\n\n'club penguin is kill'\n'no'",
         "likes": 0,
         "user_id": 4
+    },
+    {
+        "title": "This is my blog post",
+        "blog_text": "Her name is Shirley. There are many life it, but this one is mine!",
+        "likes": 0,
+        "user_id": 5
+    },
+    {
+        "title": "This place is a message... and part of a system of messages... pay attention to it!",
+        "blog_text": "This place is not a place of honor... no highly esteemed deed is commemorated here... nothing valued is here. What is here was dangerous and repulsive to us. This place is best shunned and left uninhabited.",
+        "likes": 0,
+        "user_id": 2
     }
 ]

@@ -29,13 +29,14 @@
 
             {{#if logged_in}}
             <p class="loggedInStatus">You are logged in as {{username}}</p>
-
+            <button class="new-blog-redirect"><a href="/new-blog">New Blog</a></button>
             <button class="logoutBtn">Logout</button>
             {{else}}
             <button class="logoutBtn none">Logout</button>
             <button class="aligner-right">Aligner</button>
             {{/if}}
         </div>
+        <div class="top-spacer"></div>
         {{!-- Sign Up Pop-up Modal --}}
         <div id="signUpTile" class="signup-popup">
 
