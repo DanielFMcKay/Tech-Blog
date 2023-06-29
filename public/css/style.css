@@ -583,7 +583,7 @@ body {
     flex-direction: column;
 }
 
-.new-blog-name {
+.blog-title {
     color: #1d1d1d;
     background-color: #f1fcf4;;
     font-size: 1.4rem;
@@ -596,8 +596,7 @@ body {
     padding-left: 0.5rem;
     padding-bottom: 0.25rem;
 }
-
-.new-blog-name:hover {
+.blog-title:hover {
     background-color: #ffffff;;
 }
 
@@ -614,7 +613,7 @@ body {
     box-shadow: 3px 3px 3px #595a5a;
 }
 
-.new-blog-text {
+.blog-text {
     color: #0c0c0c;
     background-color: #f1fcf4;;
     font-size: 1rem;
@@ -626,7 +625,7 @@ body {
     padding: 2px 4px;
 }
 
-.new-blog-text:hover {
+.blog-text:hover {
     background-color: #ffffff;;
 }
 
@@ -634,14 +633,26 @@ body {
     font-size: 1.1rem;
     font-weight: 600;
     color: #1d1d1d;
-    padding: 2px;
+    padding: 3px;
     position: fixed;
     top: 5rem;
-    left: 0.5rem;
-    width: 7rem;
+    left: 0.75%;
+    width: 8rem;
     min-width: 5%;
-    border-radius: 0.25rem;
-    background: linear-gradient(0.45turn, #ede9bb, #ffffef)
+    border-radius: 0.5rem;
+    background: linear-gradient(0.45turn, #f2ea90, #f2f2d0);
+}
+
+.blog-page-redirect a {
+    color: #1d1d1d;
+    text-decoration: none;
+}
+
+.blog-page-redirect a:hover {
+    color: 040404;
+    background: linear-gradient(0.45turn, #ede9bb, #ffffef);
+    box-shadow: 2px 2px 2px #738471;
+    border: 2px solid #040404;
 }
 
 /* Utility Classes */

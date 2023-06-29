@@ -151,7 +151,6 @@ const logout = async () => {
 };
 
 
-
 loginSubmitBtn.addEventListener("click", function () {
     let email = $(".login-email-field").val();
     email.value = email.toLowerCase();
@@ -171,15 +170,16 @@ loginSubmitBtn.addEventListener("click", function () {
 });
 
 
-$('.login-password-field').keydown(function (event) {
-    // If the user presses the "Enter" key on the keyboard
-    if (event.key === "Enter") {
-        // Trigger the button element with a click
+const loginPWField = document.getElementsByClassName('login-password-field')[0];
+
+document.querySelector('.login-password-field').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
         loginSubmitBtn.click();
     }
 });
 
-$('.sign-up-password-field').keydown(function (event) {
+
+document.querySelector('.sign-up-password-field').addEventListener('keydown', function(event) {
     // If the user presses the "Enter" key on the keyboard
     if (event.key === "Enter") {
         // Trigger the button element with a click
@@ -187,33 +187,17 @@ $('.sign-up-password-field').keydown(function (event) {
     }
 });
 
-
-document.querySelector('.login-submit-button').addEventListener("click", attemptLogin);
-document.querySelector('.sign-up-submit-button').addEventListener("click", attemptSignUp);
-document.querySelector('.logoutBtn').addEventListener("click", logout);
-
 // Closes sign-up modal with Escape key if in password field specifically
-$('.sign-up-password-field').keydown(function (event) {
+document.querySelector('.sign-up-password-field').addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
         signUpTile.style.display = "none";
     }
 });
 
-// const buttonMatcher = async () => {
+document.querySelector('.login-submit-button').addEventListener("click", attemptLogin);
+document.querySelector('.sign-up-submit-button').addEventListener("click", attemptSignUp);
 
-//     for (let i = 0; i < 4; i++) {
-//     let loggedInName = document.querySelector(".loggedInStatus").textContent;
-//     let blogAuthor = document.querySelector(`.blog-user`+ [i]).textContent;
-//     let blogButtonRow = document.querySelectorAll('.blog-button-row' + [i]);
-//     let blogAuthorTrimmed= blogAuthor.trim();
 
-//     console.log(loggedInName + " is loggedInName")
-//     console.log(blogAuthorTrimmed + " is blogAuthorTrimmed")
-        
-//         if (loggedInName === blogAuthorTrimmed) {
-//             blogButtonRow.style.display = "block"
-//         }
-//     }
-// }
 
-// buttonMatcher();
+
+document.querySelector('.logoutBtn').addEventListener("click", logout);
