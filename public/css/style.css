@@ -61,6 +61,10 @@ body {
     text-overflow: wrap;
 }
 
+.loggedInStatus:before {
+    content: "You are logged in as: "
+}
+
 .logoutBtn {
     font-size: 1.2rem;
     font-weight: 600;
@@ -439,7 +443,9 @@ body {
 }
 
 .blog-button-row {
+    display: none;
     position: relative;
+
     top: 0rem;
     right: 0.75rem;
     justify-content: space-between;
@@ -506,6 +512,10 @@ body {
     text-shadow: 1px 1px 1px #777883;
     left: 2.5rem;
     bottom: -1rem;
+}
+
+.blog-user:before {
+    content: "by "
 }
 
 #blog-comments-container {

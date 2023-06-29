@@ -35,6 +35,12 @@ closeLoginPopup.onclick = function () {
     loginTile.style.display = "none";
 };
 
+
+
+
+
+
+
 // window.onclick = function (event) {
 //     if (event.target == loginTile) {
 //         loginTile.style.display = "none";
@@ -192,3 +198,19 @@ $('.sign-up-password-field').keydown(function (event) {
         signUpTile.style.display = "none";
     }
 });
+
+const buttonMatcher = async () => {
+    var loggedInName = document.querySelector(".loggedInStatus").textContent;
+    var blogAuthor = document.querySelector('.blog-user').textContent;
+    var blogButtonRow = document.querySelector('.blog-button-row');
+
+
+    console.log(loggedInName + " is logged in name")
+    console.log(blogAuthor + " is blog author")
+
+    if (loggedInName = blogAuthor) {
+        blogButtonRow.style.display = "block"
+    }
+}
+
+buttonMatcher();
