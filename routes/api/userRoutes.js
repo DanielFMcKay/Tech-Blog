@@ -41,9 +41,9 @@ router.post('/login', async (req, res) => {
           .json({ message: 'Incorrect email or password, please try again' });
         return;
       }
-      userData.loggedIn = true;
-      req.session.loggedIn = true;
-      console.log(userData.loggedIn + " is userData.loggedIn");
+      // userData.loggedIn = true;
+      // req.session.loggedIn = true;
+      // console.log(userData.loggedIn + " is userData.loggedIn");
       console.log(req.body.loggedIn + " is req.session.loggedIn");
       console.log(userData.password + " is userData.password");
       console.log(req.body.password + " is req.body.password");
@@ -71,6 +71,7 @@ router.post('/login', async (req, res) => {
       req.session.save(() => {
         req.session.user_id = userData.user_id;
         req.session.logged_in = true;
+        req.session.loggedIn = true;
         console.log("logged in fr fr");
         req.session.username = userData.username;
         

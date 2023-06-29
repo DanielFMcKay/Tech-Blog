@@ -40,16 +40,19 @@ router.get("/blog", withAuth, async (req, res) => {
         },
         {
           model: User,
-          attributes: ['username'],
+          attributes: ['username', 'loggedIn'],
         },
       ],
     });
     // console.log("if (blogEntries) reached");
     if (blogEntries) {
-      const blogs = blogEntries.map((blog) => blog.get({ plain: true }));
-      console.log("This is the blog rendered");
+      const blogs = blogEntries.map((blog) => {
+        let plainBlog = blog.get({ plain: true });
+        plainBlog.is_owner = blog.user_id == req.session.user_id;
+        return plainBlog;
+      });
+      console.log(blogs);
       res.render("blog", {
-
         blogs,
         logged_in: req.session.logged_in,
         username: req.session.username,

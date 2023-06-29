@@ -443,7 +443,7 @@ body {
 }
 
 .blog-button-row {
-    display: none;
+    /* display: none; */
     position: relative;
 
     top: 0rem;

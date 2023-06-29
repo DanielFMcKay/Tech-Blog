@@ -199,18 +199,21 @@ $('.sign-up-password-field').keydown(function (event) {
     }
 });
 
-const buttonMatcher = async () => {
-    var loggedInName = document.querySelector(".loggedInStatus").textContent;
-    var blogAuthor = document.querySelector('.blog-user').textContent;
-    var blogButtonRow = document.querySelector('.blog-button-row');
+// const buttonMatcher = async () => {
 
+//     for (let i = 0; i < 4; i++) {
+//     let loggedInName = document.querySelector(".loggedInStatus").textContent;
+//     let blogAuthor = document.querySelector(`.blog-user`+ [i]).textContent;
+//     let blogButtonRow = document.querySelectorAll('.blog-button-row' + [i]);
+//     let blogAuthorTrimmed= blogAuthor.trim();
 
-    console.log(loggedInName + " is logged in name")
-    console.log(blogAuthor + " is blog author")
+//     console.log(loggedInName + " is loggedInName")
+//     console.log(blogAuthorTrimmed + " is blogAuthorTrimmed")
+        
+//         if (loggedInName === blogAuthorTrimmed) {
+//             blogButtonRow.style.display = "block"
+//         }
+//     }
+// }
 
-    if (loggedInName = blogAuthor) {
-        blogButtonRow.style.display = "block"
-    }
-}
-
-buttonMatcher();
+// buttonMatcher();

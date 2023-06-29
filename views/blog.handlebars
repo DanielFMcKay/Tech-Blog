@@ -1,19 +1,18 @@
 {{#each blogs as |blog| }}
 <section id="techBlogMainContainer">
     <div class="blog-header-row">
-
         <div class="blog-button-row">
-            {{!-- {{#if user}} --}}
-            <button class="edit-blog-button">Edit</button>
-            <button class="delete-blog-button" data-id="{{blog.id}}">Delete</button>
-            {{!-- {{/if}} --}}
+                {{#if blog.is_owner}}
+                    <button class="edit-blog-button">Edit</button>
+                    <button class="delete-blog-button" data-id="{{blog.id}}">Delete</button>
+                {{/if}}
         </div>
         <h2 class="blog-title">{{blog.title}}</h2>
     </div>
     <div class="blog-content">
         <div class="blog-post-text">
             <p placeholder="test">{{blog.blog_text}}</p>
-            <h3 class="blog-user">{{user.username}}</p>
+            <h3 class="blog-user blog-user{{blog.id}}">{{user.username}}</p>
             </h3><br>
             <p>
                 Date Created: {{format_date date_created}}
