@@ -17,5 +17,24 @@ const blogPoster = async () => {
     }
 };
 
+const delButtonHandler = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+      const response = await fetch(`/api/blog/${id}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        document.location.replace('/blog');
+      } else {
+   
+        alert('Your attempt to delete the blog failed harder than my last relationship.');
+      }
+    }
+  };
+
+
+document.querySelector('#techBlogMainContainer').addEventListener('click', delButtonHandler);
+
 document.querySelector('.blog-entry-submit').addEventListener('submit', blogPoster);
 document.querySelector('.blog-entry-submit-button').addEventListener('click', blogPoster);

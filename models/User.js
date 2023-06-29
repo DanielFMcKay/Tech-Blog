@@ -36,6 +36,12 @@ User.init(
             allowNull: false,
             len: [6],
         },
+        // this one is for rendering certain things like the delete or edit buttons
+        loggedIn: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false,
+        },
 
     },
     {

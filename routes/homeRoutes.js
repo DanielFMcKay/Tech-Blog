@@ -44,7 +44,7 @@ router.get("/blog", withAuth, async (req, res) => {
         },
       ],
     });
-    console.log("if (blogEntries) reached");
+    // console.log("if (blogEntries) reached");
     if (blogEntries) {
       const blogs = blogEntries.map((blog) => blog.get({ plain: true }));
       console.log("This is the blog rendered");

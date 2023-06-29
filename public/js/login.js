@@ -92,7 +92,7 @@ const attemptSignUp = async () => {
 
     // Create a data object with the input values
     const userData = {
-        username: signUpUsername.value,
+        username: signUp.value,
         email: signUpEmail.value,
         password: signUpPassword.value
     };

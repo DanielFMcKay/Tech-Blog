@@ -17,8 +17,9 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = userData.user_id;
-      req.session.logged_in = true;
+      req.session.loggedIn = true;
       req.session.username = userData.username;
+      userData.loggedIn = true;
       console.log("logged in via post route X");
     });
 
@@ -40,7 +41,10 @@ router.post('/login', async (req, res) => {
           .json({ message: 'Incorrect email or password, please try again' });
         return;
       }
-  
+      userData.loggedIn = true;
+      req.session.loggedIn = true;
+      console.log(userData.loggedIn + " is userData.loggedIn");
+      console.log(req.body.loggedIn + " is req.session.loggedIn");
       console.log(userData.password + " is userData.password");
       console.log(req.body.password + " is req.body.password");
       console.log(userData.username + " is userData.username");
@@ -80,6 +84,7 @@ router.post('/login', async (req, res) => {
   
   router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
+      // userData.loggedIn = false;
       req.session.destroy(() => {
         res.status(204).end()
         // sends back to homepage if not already there 

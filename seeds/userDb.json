@@ -2,7 +2,8 @@
     {
         "username": "Edgelord69420",
         "email": "edgymcedgelord@example.com",
-        "password": "horsebatterystaple"
+        "password": "horsebatterystaple",
+        "logged_in": true
     },
     {
         "username": "Vapelord42069",
@@ -17,7 +18,8 @@
     {
         "username": "SpookyForestWitch",
         "email": "GaiaBoudica@tumblr.net",
-        "password": "itsnotaphasemom!"
+        "password": "itsnotaphasemom!",
+        "logged_in": true
     },
     {
         "username": "ExampleUser1",

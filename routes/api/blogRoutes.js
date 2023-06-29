@@ -55,6 +55,9 @@ router.delete('blog/:id', withAuth, async (req, res) => {
     if (!blogData) {
       res.status(404).json({ message: 'No blog found with this id! The Illuminati are nigh!' });
       return;
+    } else if (blogData) {
+      res.status(400).json({ message: 'This is not your blog!' });
+      return;
     }
 
     res.status(200).json(blogData);
