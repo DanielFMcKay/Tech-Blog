@@ -45,6 +45,17 @@ body {
     cursor: pointer;
 }
 
+.dash-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    font-style: italic;
+    background: -webkit-linear-gradient(0.46turn, #948fb1, #93b5c5, #5b4f67);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: -0.45rem;
+}
+
+
 .loggedInStatus {
     position: fixed;
     right: 16rem;
