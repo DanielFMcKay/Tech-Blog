@@ -7,6 +7,9 @@
 ### Overview
 * Dan's Tech Blog is a micro-blogging site that is intended as a demonstration of a social media site where users can sign-up, make posts, read other posts, edit and delete their own posts, and comment on others' posts.
 
+### Deployed Site
+* Heroku link: <a href=https://dans-tech-blog-9f4cea4a34ae.herokuapp.com/>Dan's Tech Blog</a>
+
 ### User Story
 
 ```md
@@ -18,11 +21,11 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 ### Screenshots
 ![image](https://github.com/DanielFMcKay/Tech-Blog/assets/123746582/ac2a3162-ecc6-4127-9800-92a253636156)
 
-![image](https://github.com/DanielFMcKay/Tech-Blog/assets/123746582/5bbcde54-0888-4755-85e4-2135d1923ce9)
+![image](https://github.com/DanielFMcKay/Tech-Blog/assets/123746582/de932c02-57dd-4d7e-8980-18bb2c17d0b7)
+
+![image](https://github.com/DanielFMcKay/Tech-Blog/assets/123746582/913a6cb5-d327-4f07-ba7d-bb1d51a81149)
 
 ![image](https://github.com/DanielFMcKay/Tech-Blog/assets/123746582/e939725c-d3c6-46ce-8f89-521303022735)
-
-![image](https://github.com/DanielFMcKay/Tech-Blog/assets/123746582/de932c02-57dd-4d7e-8980-18bb2c17d0b7)
 
 ### Installation
 * Clone the repo to a local directory. After doing so, please navigate there in real time.
@@ -84,9 +87,6 @@ THEN I am signed out of the site
 WHEN I am idle on the site for more than a set time
 THEN I am able to view posts and comments but I am prompted to log in again before I can add, update, or delete posts
 ```
-
-### Deployed Site
-* Heroku link: <a href=https://dans-tech-blog-9f4cea4a34ae.herokuapp.com>To Be Added</a>
 
 ### License
 This application is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
