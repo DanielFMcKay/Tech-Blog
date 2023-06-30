@@ -2,9 +2,12 @@
 
 ### by Dan McKay
 
-* This is the assignment for Week 14 of the Full Stack Coding Bootcamp as offered through UC Berkeley Continuing Education in partnership with edX. This ReadMe is currently a placeholder, as this is very much a work in progress!!
+* This is the assignment for Week 14 of the Full Stack Coding Bootcamp as offered through UC Berkeley Continuing Education in partnership with edX. This ReadMe is currently a placeholder, as this is very much a work in progress still.
 
-## User Story
+### Overview
+* Dan's Tech Blog is a micro-blogging site that is intended as a demonstration of a social media site where users can sign-up, make posts, read other posts, edit and delete their own posts, and comment on others' posts.
+
+### User Story
 
 ```md
 AS A developer who writes about tech
@@ -12,7 +15,7 @@ I WANT a CMS-style blog site
 SO THAT I can publish articles, blog posts, and my thoughts and opinions
 ```
 
-## Screenshots
+### Screenshots
 ![image](https://github.com/DanielFMcKay/Tech-Blog/assets/123746582/ac2a3162-ecc6-4127-9800-92a253636156)
 
 ![image](https://github.com/DanielFMcKay/Tech-Blog/assets/123746582/5bbcde54-0888-4755-85e4-2135d1923ce9)
@@ -21,8 +24,15 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 
 ![image](https://github.com/DanielFMcKay/Tech-Blog/assets/123746582/de932c02-57dd-4d7e-8980-18bb2c17d0b7)
 
+### Installation
+* Clone the repo to a local directory. After doing so, please navigate there in real time.
+* enter the line "npm i" to install dependencies.
+* enter the line "npm run seed" to seed the database.
+* use "npm start" to start the app.
+* you can open a local copy in your web browser at localhost:3001/
+* sign up for an account, login, and click the Enter Blogs button to enter, or the New Blog button to write a new one.
 
-## Acceptance Criteria
+### Acceptance Criteria
 
 ```md
 GIVEN a CMS-style blog site
@@ -78,7 +88,7 @@ THEN I am able to view posts and comments but I am prompted to log in again befo
 ### Deployed Site
 * Heroku link: <a href=https://dans-tech-blog-9f4cea4a34ae.herokuapp.com>To Be Added</a>
 
-## License
+### License
 This application is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
 
 MIT License
