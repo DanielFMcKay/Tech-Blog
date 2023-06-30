@@ -1,4 +1,3 @@
-// code goes here
 
 const path = require('path');
 const express = require('express');
