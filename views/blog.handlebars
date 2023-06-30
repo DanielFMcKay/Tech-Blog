@@ -20,12 +20,13 @@
         </div>
     </div>
 </section>
-{{!-- {{#each comments as |comment| }} --}}
+
 <div id="blog-comments-container">
     <h3>Comments</h3>
-    {{!-- <p>• {{user.username}}: {{comment.comment_text}}</p> --}}
+{{#each comments as |comment| }}
+    <p>• {{user.username}}: {{comment.comment_text}}</p>
+    {{/each}}
 </div>
-{{!-- {{/each}} --}}
 {{/each}}
 
-<script src="./js/blog-delete.js"></script>
+<script src="./js/blog-display.js"></script>

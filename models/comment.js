@@ -33,6 +33,7 @@ Comment.init(
         comment_likes: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            defaultValue: 0,
         },
         blog_id: {
             type: DataTypes.INTEGER,

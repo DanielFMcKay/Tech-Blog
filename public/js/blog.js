@@ -14,9 +14,9 @@ const blogPoster = async () => {
         document.location.replace('/blog');
     }
     else {
-        alert(response.statusText + "An error occured while posting. Please select a different god to pray to");
+        alert(response.statusText + ": An error occured while posting. Please select a different god to pray to");
     }
-};
+}
 
 
 document.querySelector('.post-blog-button').addEventListener('click', blogPoster);
