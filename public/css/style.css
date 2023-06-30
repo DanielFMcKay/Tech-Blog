@@ -652,7 +652,7 @@ body {
     top: 5rem;
     left: 0.75%;
     width: 8rem;
-    min-width: 5%;
+    min-width: 5.5%;
     border-radius: 0.5rem;
     background: linear-gradient(0.45turn, #f2ea90, #f2f2d0);
 }
@@ -662,7 +662,7 @@ body {
     text-decoration: none;
 }
 
-.blog-page-redirect a:hover {
+.blog-page-redirect:hover {
     color: 040404;
     background: linear-gradient(0.45turn, #ede9bb, #ffffef);
     box-shadow: 2px 2px 2px #738471;
