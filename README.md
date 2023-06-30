@@ -19,9 +19,9 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 ```
 
 ### Screenshots
-![image](https://github.com/DanielFMcKay/Tech-Blog/assets/123746582/ac2a3162-ecc6-4127-9800-92a253636156)
+![image](https://github.com/DanielFMcKay/Tech-Blog/assets/123746582/a5679d0d-41f6-46c9-8fa3-28341a9344ea)
 
-![image](https://github.com/DanielFMcKay/Tech-Blog/assets/123746582/de932c02-57dd-4d7e-8980-18bb2c17d0b7)
+![image](https://github.com/DanielFMcKay/Tech-Blog/assets/123746582/b415a81c-bc4d-4a3b-ba2a-194be16a7528)
 
 ![image](https://github.com/DanielFMcKay/Tech-Blog/assets/123746582/913a6cb5-d327-4f07-ba7d-bb1d51a81149)
 
