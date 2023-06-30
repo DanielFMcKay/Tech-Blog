@@ -6,7 +6,7 @@ const { User, Blog, Comment } = require('../models');
 // test insert JSON
 const userData = require('./userDb.json');
 const blogData = require('./blogDb.json');
-const commentData = require('./commentDb.json');
+const commentData = require('./commentDB.json');
 
 const seedData = async () => {
   await sequelize.sync({ force: true });
