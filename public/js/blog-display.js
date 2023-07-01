@@ -6,13 +6,14 @@ const delButtonHandler = async (req, res) => {
     const blogId = deleteBlogBtn.getAttribute('data-id');
     console.log(blogId + " is blogId")
     await fetch(`/api/blogs/${blogId}`, {
-        method: 'DELETE'
+        method: 'DELETE',
     })
-    if (res.ok) {
+    // if (res.ok) {
+        console.log ("blog may have been deleted now");
         window.location.reload();
-    } else {
-        alert('Your attempt to delete the blog failed harder than my last relationship.');
-    }
+    // } else {
+    //     alert('Your attempt to delete the blog failed harder than my last relationship.');
+    // }
 };
 
 document.querySelector('.delete-blog-button').addEventListener('click', delButtonHandler);
