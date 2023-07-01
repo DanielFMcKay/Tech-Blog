@@ -5,7 +5,7 @@ const blogPoster = async () => {
     const blogTitle = document.querySelector('.blog-title').value.trim();
     const blogText = document.querySelector('.blog-text').value.trim();
 
-    const response = await fetch('/api/blog', {
+    const response = await fetch('/api/blogs', {
         method: 'POST',
         body: JSON.stringify({ blogTitle, blogText }),
         headers: { 'Content-Type': 'application/json' },

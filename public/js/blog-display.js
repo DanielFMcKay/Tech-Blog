@@ -5,7 +5,7 @@ const delButtonHandler = async () => {
     console.log("variance")
     var blogId = deleteBlogBtn.getAttribute('data-id');
     console.log(blogId + " is blogId");
-    const response = await fetch(`/api/blog/id:1`, {
+    const response = await fetch(`/api/blogs/${id}`, {
         method: 'DELETE'
     });
 
