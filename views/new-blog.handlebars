@@ -2,13 +2,52 @@
 
 <label class="new-blog-page-header">Create Your New Blog Post</label>
 <div id="newBlogContainer">
-        <button class="post-blog-button">Post Blog</button>
+    <button class="post-blog-button">Post Blog</button>
     <div class="blog-input-stack">
-    <input type="text" class="blog-title" placeholder="Enter your post title here"><br>
-    <textarea class="blog-text" placeholder="Enter your post text here"></textarea>
+        <input type="text" class="blog-title" max-length="50" placeholder="Enter your post title here" /><br>
+        <textarea class="blog-text" placeholder="Enter your post text here" maxlength="500" type="text"></textarea>
     </div>
+</div>
+
+<div class="user-blog-list">
+    {{#if blogs.length}}
+    <h3 class="blog-list-header">{{username}}'s Blogs:</h3>
+    {{#each blogs as |blog|}}
+    {{#if blog.is_owner}}
+    <section id="techBlogMainContainer">
+        <div class="blog-header-row">
+            <div class="blog-button-row">
+                <button class="edit-blog-button">Edit</button>
+                <button class="delete-blog-button" data-id="{{blog.id}}">Delete</button>
+            </div>
+            <h2 class="blog-title">{{blog.title}}</h2>
+        </div>
+        <div class="blog-content">
+            <div class="blog-post-text">
+                <p placeholder="test">{{blog.blog_text}}</p>
+                </h3><br>
+                <p>
+                    Date Created: {{format_date date_created}}
+                </p>
+            </div>
+        </div>
+    </section>
+    <div id="blog-comments-container">
+        {{#if comments.length}}
+        <h3>Comments</h3>
+        {{#each comments as |comment| }}
+        <p>• {{user.username}}: {{comment.comment_text}}</p>
+        {{/each}}
+        {{/if}}
+    </div>
+    {{/if}}
+    {{/each}}
+    {{else}}
+    <h3 class="blog-list-header">No blogs posted yet</h3>
+    {{/if}}
 </div>
 
 <button class="blog-page-redirect"><a href="/blog">◄ Public Blogs</a></button>
 
 <script src="./js/blog.js"></script>
+<script src="./js/blog-display.js"></script>

@@ -4,58 +4,48 @@ const { Blog, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
-router.get('/', async (req, res) => {
-  try {
-    const blogData = await Blog.findAll({});
-    if (blogData.length === 0) {
-      res.status(404).json({ message: "No blogs found." });
-      return;
-    };
-    res.status(200).json(blogData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+// router.get('/', async (req, res) => {
+//   try {
+//     const blogData = await Blog.findAll({});
+//     if (blogData.length === 0) {
+//       res.status(404).json({ message: "No blogs found." });
+//       return;
+//     };
+//     res.status(200).json(blogData);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
-// Get a singular from blog
-router.get('/:id', async (req, res) => {
-  try {
-    const blogData = await Blog.findByPk(req.params.id,{include:[User, Comment]})
-    if (blogData.length === 0) {
-      res.status(404).json({ message: "No blogs found." });
-      return;
-    };
-    res.status(200).json(blogData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+// // Get a singular from blog
+// router.get('/:id', async (req, res) => {
+//   try {
+//     const blogData = await Blog.findByPk(req.params.id,{include:[User, Comment]})
+//     if (blogData.length === 0) {
+//       res.status(404).json({ message: "No blogs found." });
+//       return;
+//     };
+//     res.status(200).json(blogData);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
-router.post('/', withAuth, async (req, res) => {
+
+// May or may not re-add withAuth
+router.post('/', async (req, res) => {
   try {
     const newBlog = await Blog.create({
       ...req.body,
       user_id: req.session.user_id,
     });
-    console.logt("Blogs Posted" );
+    console.log("Blog Posted" );
     res.status(200).json(newBlog);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-
-// router.post('/', withAuth, async (req, res) => {
-//   try {
-//     const newBlog = await Comment.create({
-//       ...req.body,
-//       user_id: req.session.user_id,
-//     });
-//     res.status(200).json(newBlog);
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
 
 // for Editing in the future. May or may not keep withAuth
 router.put('/:id', withAuth, async (req, res) => {

@@ -73,12 +73,54 @@ router.get("/blog", withAuth, async (req, res) => {
 router.get("/new-blog", withAuth, async (req, res) => {
   console.log("this is the new blog page");
   try {
-    res.render("new-blog", {
-
-      logged_in: req.session.logged_in,
-      username: req.session.username,
-      title: "Tech Blog - Create Post",
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [
+        {
+          model: Blog,
+          attributes: ['id', 'title', 'blog_text', 'date_created', 'likes', 'user_id']
+        }
+      ],
     });
+    const user = userData.get({ plain: true });
+
+    const blogEntries = await Blog.findAll({
+      // where: { user_id: req.session.user_id },
+      attributes: ['id', 'title', 'blog_text', 'date_created', 'likes', 'user_id'],
+      include: [
+        {
+          model: Comment,
+          attributes: ['comment_id', 'comment_text', 'blog_id', 'date_created', 'user_id'],
+          include: {
+            model: User,
+            attributes: ['username'],
+          },
+        },
+        {
+          model: User,
+          attributes: ['username', 'loggedIn'],
+        },
+      ],
+    });
+    // console.log("if (blogEntries) reached");
+    if (blogEntries) {
+      const blogs = blogEntries.map((blog) => {
+        let plainBlog = blog.get({ plain: true });
+        plainBlog.is_owner = blog.user_id == req.session.user_id;
+        return plainBlog;
+      });
+      res.render("new-blog", {
+        ...user,
+        blogs,
+        logged_in: req.session.logged_in,
+        username: req.session.username,
+        title: "Tech Blog - Create Post",
+      });
+    }
+    else {
+      res.status(400).json({ message: 'No blog found'});
+      return;
+    }
   } catch (err) {
     res.status(500).json(err);
   }

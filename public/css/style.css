@@ -566,8 +566,8 @@ body {
     font-size: 1.8rem;
     font-weight: 600;
     position: relative;
-    left: 12%;
-    text-shadow: 2px 2px 2px #505852;
+    left: 14.5%;
+    text-shadow: 2px 2px 2px #698a71;;
     margin-top: -0.5rem;
 }
 
@@ -669,6 +669,21 @@ body {
     box-shadow: 2px 2px 2px #738471;
     border: 2px solid #040404;
 }
+
+.blog-list-header {
+    position: relative;
+    left: 16%;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #1d2421;
+    text-shadow: 2px 2px 2px #84a78d;
+    margin-bottom: -1.5rem;
+}
+
+.user-blog-list {
+    margin-top: 2.25rem;
+}
+
 
 /* Utility Classes */
 
