@@ -17,14 +17,14 @@ const blogRetrieve = async (event) => {
     }
     console.log(blogTitle + " is blogTitle")
     try {
-    const response = await fetch('/api/blogs', {
-        method: 'POST',
-        body: JSON.stringify({ blogTitle, blogText }),
-        headers: { 'Content-Type': 'application/json' },
-    })
-    if (response.ok) {
-        document.location.reload
-    }
+        const response = await fetch('/api/blogs', {
+            method: 'POST',
+            body: JSON.stringify({ blogTitle, blogText }),
+            headers: { 'Content-Type': 'application/json' },
+        })
+        if (response.ok) {
+            document.location.reload
+        }
     } catch (err) {
         console.log(err + " is err");
         return;
