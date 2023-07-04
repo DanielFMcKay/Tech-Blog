@@ -36,10 +36,13 @@ const withAuth = require('../../utils/auth');
 router.post('/', async (req, res) => {
   try {
     const newBlog = await Blog.create({
+
+      title: req.body.blogTitle,
+      blog_text: req.body.blogText,
       ...req.body,
       user_id: req.session.user_id,
     });
-    console.log("Blog Posted" );
+    console.log("Blog Posted");
     res.status(200).json(newBlog);
   } catch (err) {
     res.status(400).json(err);
@@ -65,7 +68,7 @@ router.put('/:id', withAuth, async (req, res) => {
     if (!updateBlog) {
       res.status(404).json({ message: 'Oh no! Blog missing! Delete C:/Windows/System32 Commence!!' });
       return;
-    }  
+    }
     res.status(200).json(updateBlog);
   } catch (err) {
     res.status(500).json(err);

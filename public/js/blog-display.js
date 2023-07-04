@@ -16,6 +16,12 @@ const delButtonHandler = async (req, res) => {
     // }
 };
 
+const delBlog = () => delButtonHandler().then(window.location.reload());
+
 if (deleteBlogBtn) {
-    deleteBlogBtn.addEventListener('click', delButtonHandler);
+    deleteBlogBtn.addEventListener('click', delBlog);
 }
+
+const addCommentBtn = document.querySelector('.add-comment-button');
+const addCommentContainer = document.querySelector('.add-comment-container');
+addCommentContainer.display = "none";

@@ -5,7 +5,6 @@ const postBlogBtn = document.querySelector('.post-blog-button');
 
 techBlogMainContainer = document.querySelector('#techBlogMainContainer');
 const blogRetrieve = async (event) => {
-    event.preventDefault();
 
     const blogTitle = document.querySelector('.blog-title').value.trim();
     const blogText = document.querySelector('.blog-text').value.trim();
@@ -23,7 +22,7 @@ const blogRetrieve = async (event) => {
             headers: { 'Content-Type': 'application/json' },
         })
         if (response.ok) {
-            document.location.reload
+            document.location.reload();
         }
     } catch (err) {
         console.log(err + " is err");
@@ -39,9 +38,6 @@ const blogRetrieve = async (event) => {
 // }}
 // )};
 
+const blogPoster = () => blogRetrieve().then(document.location.reload);;
+postBlogBtn.addEventListener('click', blogPoster);
 
-
-// const blogPoster = () => blogRetrieve().then(document.location.replace('/blog'));
-
-
-postBlogBtn.addEventListener('click', blogRetrieve);

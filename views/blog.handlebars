@@ -2,10 +2,10 @@
 <section id="techBlogMainContainer">
     <div class="blog-header-row">
         <div class="blog-button-row">
-                {{#if blog.is_owner}}
-                    <button class="edit-blog-button">Edit</button>
-                    <button class="delete-blog-button" data-id="{{blog.id}}">Delete</button>
-                {{/if}}
+            {{#if blog.is_owner}}
+            <button class="edit-blog-button">Edit</button>
+            <button class="delete-blog-button" data-id="{{blog.id}}">Delete</button>
+            {{/if}}
         </div>
         <h2 class="blog-title">{{blog.title}}</h2>
     </div>
@@ -22,14 +22,26 @@
 </section>
 
 <div id="blog-comments-container">
- {{#if comments.length}}
-    <h3>Comments</h3>
-{{#each comments as |comment| }}
+    <div class="comment-header-row row">
+        <button class="addCommentBtn" data-id="{{blog.id}}">✚</button>
+        <h3>Comments</h3>
+    </div>
+    {{#if comments.length}}
+    {{#each comments as |comment| }}
     <p>• {{user.username}}: {{comment.comment_text}}</p>
     {{/each}}
     {{/if}}
 </div>
 {{/each}}
+
+<div class="add-comment-container">
+    <div class="close-comment-popup"> ✕</div>
+    <p>Speak Your Opinion</p>
+    <div class="signup-column">
+        <input type="text" class="add-comment-textfield" placeholder="enter a comment here" />
+        <button class="commentSubmitBtn">Submit</button>
+    </div>
+</div>
 
 
 <script src="./js/blog-display.js"></script>
