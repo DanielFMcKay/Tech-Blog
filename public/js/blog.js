@@ -4,7 +4,9 @@ const postBlogBtn = document.querySelector('.post-blog-button');
 
 
 techBlogMainContainer = document.querySelector('#techBlogMainContainer');
-const blogRetrieve = async () => {
+const blogRetrieve = async (event) => {
+    event.preventDefault();
+
     const blogTitle = document.querySelector('.blog-title').value.trim();
     const blogText = document.querySelector('.blog-text').value.trim();
 
@@ -15,11 +17,14 @@ const blogRetrieve = async () => {
     }
     console.log(blogTitle + " is blogTitle")
     try {
-    await fetch('/api/blogs', {
+    const response = await fetch('/api/blogs', {
         method: 'POST',
         body: JSON.stringify({ blogTitle, blogText }),
         headers: { 'Content-Type': 'application/json' },
     })
+    if (response.ok) {
+        document.location.reload
+    }
     } catch (err) {
         console.log(err + " is err");
         return;
