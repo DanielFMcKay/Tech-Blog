@@ -34,12 +34,15 @@
 </div>
 {{/each}}
 
-<div class="add-comment-container">
-    <div class="close-comment-popup"> ✕</div>
-    <p>Speak Your Opinion</p>
-    <div class="signup-column">
-        <input type="text" class="add-comment-textfield" placeholder="enter a comment here" />
-        <button class="commentSubmitBtn">Submit</button>
+<div id="add-comment-tile">
+    <div class="add-comment-container">
+        <div class="close-comment-popup">✕</div>
+        <p>Speak Your Opinion</p>
+        <div class="signup-column">
+            <textarea type="text" class="new-comment-textfield" 
+            maxlength="240" placeholder="enter a comment here" /></textarea>
+            <button class="commentSubmitBtn">Post Comment</button>
+        </div>
     </div>
 </div>
 

@@ -1,10 +1,6 @@
 const loginSubmitBtn = document.querySelectorAll(".login-submit-button")[0];
 const loginBtn = document.querySelectorAll(".login-button")[0];
 
-// const signUpEmail = $(".sign-up-email-field").val();
-// signUpEmail.value = signUpEmail.toLowerCase();
-// signUpEmail.value = signUpEmail?.trim();
-
 const signUpButton = document.querySelectorAll(".sign-up-button")[0];
 const signUpTile = document.querySelectorAll("#signUpTile")[0];
 const signUpSubmitBtn = document.querySelectorAll(".sign-up-submit-button")[0];
@@ -34,26 +30,6 @@ closeSignUpPopup.onclick = function () {
 closeLoginPopup.onclick = function () {
     loginTile.style.display = "none";
 };
-
-
-
-
-
-
-
-// window.onclick = function (event) {
-//     if (event.target == loginTile) {
-//         loginTile.style.display = "none";
-//     }
-//     console.log("login tile closed")
-// };
-
-// window.onclick = function (event) {
-//     if (event.target == signUpTile) {
-//         signUpTile.style.display = "none";
-//     }
-//     console.log("a tile closed")
-// };
 
 
 

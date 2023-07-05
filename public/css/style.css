@@ -167,6 +167,7 @@ body {
     background: #ffffff;
 }
 
+
 .signup-popup {
     display: hidden;
     position: fixed;
@@ -561,6 +562,13 @@ body {
     font-size: 1.5rem;
 }
 
+#blog-comments-container p {
+    margin-left: 1.25rem;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.1rem;
+}
+
 .addCommentBtn {
     position: relative;
     left: 1rem;
@@ -584,39 +592,93 @@ body {
     box-shadow: 2px 2px 2px #958b9a;
 }
 
-#blog-comments-container p {
-    margin-left: 1.25rem;
-    font-weight: 600;
-    font-size: 1rem;
-    line-height: 1.1rem;
+#add-comment-tile {
+    display: hidden;
+    position: fixed;
+    padding-top: 15rem;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #12513360; 
 }
 
-/* temporary attributes, will change/tweak */
+
 .add-comment-container {
-    display: none;
     line-height: 1.5rem;
-    background: linear-gradient(0.48turn, #87b1e9, #f4f9fd);
+    background: linear-gradient(0.48turn, #8789e9, #f6f4fd);
     border-radius: 15px;
     margin: auto;
     padding: 1.75rem 1.75rem 1rem 2rem;
     border: 4px solid #5a6164;
-    width: 30rem;
-    height: 14.5rem;
+    width: 40%;
+    min-height: 42%;
     justify-content: space-around;
 }
 
-.close-comment-popup {
-    color: #697281;
-    float: right;
-    font-size: 1.25rem;
+.add-comment-container p {
+    color: #38383b;
+    font-size: 1.2rem;
     font-weight: 600;
-    margin-top: -1.15rem;
-    margin-right: -1.15rem;
+    margin-bottom: 1.2rem;
+    margin-left: 0.75rem;
+    margin-top: -0.5rem;
+}
+
+.new-comment-textfield {
+    background: #f6fafb;
+    font-size: 1rem;
+    line-height: 1.35rem;
+    width: 90%;
+    min-height: 8rem;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5rem;
+}
+
+.new-comment-textfield:hover {
+    background: #ffffff;
+}
+
+.commentSubmitBtn {
+    font-size: 1.35rem;
+    font-weight: 600;
+    background: linear-gradient(#60c989, #a1decc);
+    border: 2px solid #4f729b;
+    border-radius: 0.9rem;
+    padding: 0.25rem 0.5rem 0.5rem 0.5rem;
+    margin-top: 0.75rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.25rem;
+    width: fit-content;
+}
+
+.commentSubmitBtn:hover {
+    color: #060606;
+    background: linear-gradient(#84eead, #d0f8ed);
+    border: 3px solid #414b57;
+    text-shadow: 0 0 2px #5c85b3;
+    padding: 0.2rem 0.4rem 0.4rem 0.4rem;
+    box-shadow: 2px 2px 2px #72817c;
+}
+
+
+.close-comment-popup {
+    color: #5d5c6f;
+    float: right;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: -1rem;
+    margin-right: -1rem;
 }
 
 .close-comment-popup:hover {
-    color: #060606;
-    text-shadow: 1px 1px 1px #8d949e;
+    color: #dfdbe3;
+    text-shadow: 2px 2px 2px #555a60;
     cursor: pointer;
 }
 

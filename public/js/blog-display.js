@@ -9,8 +9,8 @@ const delButtonHandler = async (req, res) => {
         method: 'DELETE',
     })
     // if (res.ok) {
-        console.log ("blog may have been deleted now");
-        window.location.reload();
+    console.log("blog may have been deleted now");
+    window.location.reload();
     // } else {
     //     alert('Your attempt to delete the blog failed harder than my last relationship.');
     // }
@@ -22,6 +22,19 @@ if (deleteBlogBtn) {
     deleteBlogBtn.addEventListener('click', delBlog);
 }
 
-const addCommentBtn = document.querySelector('.add-comment-button');
-const addCommentContainer = document.querySelector('.add-comment-container');
-addCommentContainer.display = "none";
+// Comment Modal stuff
+const addCommentTile = document.querySelector('#add-comment-tile');
+const closeCommentPopup = document.querySelector('.close-comment-popup');
+const addCommentBtn = document.querySelectorAll('.addCommentBtn')[0];
+const commentSubmitBtn = document.querySelector('.commentSubmitBtn')[0];
+
+addCommentTile.style.display = "none";
+
+addCommentBtn.addEventListener("click", function () {
+    addCommentTile.style.display = "block";
+});
+
+closeCommentPopup.addEventListener("click", function () {
+    addCommentTile.style.display = "none";
+});
+
