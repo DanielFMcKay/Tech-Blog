@@ -163,17 +163,41 @@ document.querySelector('.sign-up-password-field').addEventListener('keydown', fu
     }
 });
 
-// Closes sign-up modal with Escape key if in password field specifically
+// Closes sign-up modal with Escape key if in any text field
+
+document.querySelector('.sign-up-username-field').addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+        signUpTile.style.display = "none";
+    }
+});
+
+document.querySelector('.sign-up-email-field').addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+        signUpTile.style.display = "none";
+    }
+});
+
 document.querySelector('.sign-up-password-field').addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
         signUpTile.style.display = "none";
     }
 });
 
+// Closes login modal with Escape key if in any text field as well
+
+document.querySelector('.login-email-field').addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+        loginTile.style.display = "none";
+    }
+});
+
+document.querySelector('.login-password-field').addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+        loginTile.style.display = "none";
+    }
+});
+
+
 document.querySelector('.login-submit-button').addEventListener("click", attemptLogin);
 document.querySelector('.sign-up-submit-button').addEventListener("click", attemptSignUp);
-
-
-
-
 document.querySelector('.logoutBtn').addEventListener("click", logout);

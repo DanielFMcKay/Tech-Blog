@@ -10,7 +10,7 @@
 </div>
 
 <div class="user-blog-list">
-    {{#if blogs.length}}
+    {{#if username}}
     <h3 class="blog-list-header">{{username}}'s Blogs:</h3>
     {{#each blogs as |blog|}}
     {{#if blog.is_owner}}
@@ -50,4 +50,4 @@
 <button class="blog-page-redirect"><a href="/blog">◄ Public Blogs</a></button>
 
 <script src="./js/new-blog.js"></script>
-<script src="./js/blog-display.js"></script>
+<script src="./js/blog-delete.js"></script>
