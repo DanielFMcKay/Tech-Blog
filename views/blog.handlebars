@@ -28,7 +28,11 @@
     </div>
     {{#if comments.length}}
     {{#each comments as |comment| }}
-    <p>• {{user.username}}: {{comment.comment_text}}</p>
+    <div class="comment-row row">
+    <p>• {{user.username}}: {{comment.comment_text}} - {{format_date date_created}}</p>
+    <button class="delete-comment-button" data-id="{{comment_id}}">✕</button>
+    </div>
+    {{else}}
     {{/each}}
     {{/if}}
 </div>

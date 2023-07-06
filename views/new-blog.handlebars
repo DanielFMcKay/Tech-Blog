@@ -10,8 +10,8 @@
 </div>
 
 <div class="user-blog-list">
-    {{#if username}}
-    <h3 class="blog-list-header">{{username}}'s Blogs:</h3>
+    {{#if blogs.length}}
+    <h3 class="blog-list-header">{{username}}'s Blogs</h3>
     {{#each blogs as |blog|}}
     {{#if blog.is_owner}}
     <section id="techBlogMainContainer">

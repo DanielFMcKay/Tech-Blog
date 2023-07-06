@@ -4,33 +4,6 @@ const { Blog, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
-// router.get('/', async (req, res) => {
-//   try {
-//     const blogData = await Blog.findAll({});
-//     if (blogData.length === 0) {
-//       res.status(404).json({ message: "No blogs found." });
-//       return;
-//     };
-//     res.status(200).json(blogData);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-// // Get a singular from blog
-// router.get('/:id', async (req, res) => {
-//   try {
-//     const blogData = await Blog.findByPk(req.params.id,{include:[User, Comment]})
-//     if (blogData.length === 0) {
-//       res.status(404).json({ message: "No blogs found." });
-//       return;
-//     };
-//     res.status(200).json(blogData);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
 
 // May or may not re-add withAuth
 router.post('/', async (req, res) => {

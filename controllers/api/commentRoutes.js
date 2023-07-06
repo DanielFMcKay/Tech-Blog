@@ -39,7 +39,9 @@ router.post('/', withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
       ...body,
-      userId: req.session.userId,
+      comment_text: req.body.commentText,
+      blog_id: req.body.blogId,
+      user_id: req.session.user_id,
     });
     res.status(200).json({ newComment, success: true });
   } catch (err) {
@@ -61,11 +63,9 @@ router.delete('/:id', withAuth, async (req, res) => {
     }
     res.status(200).json({ commentData, success: true });
   } catch (err) {
+    console.log(err + " is the error");
     res.status(500).json(err);
   }
 });
-
-module.exports = router;
-
 
 module.exports = router;

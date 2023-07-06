@@ -6,8 +6,8 @@ html {
 }
 
 body {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(0.39turn,#65daad,#b5f6dd 80%,#ecfff8 92%, #078a88);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(0.39turn, #65daad, #b5f6dd 80%, #ecfff8 92%, #078a88);
     background-size: cover;
     border-top: 2px solid #3a4558;
     padding-bottom: 2.5rem;
@@ -283,7 +283,7 @@ body {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: #12513360; 
+    background-color: #12513360;
 }
 
 .sign-up-button {
@@ -320,7 +320,7 @@ body {
 }
 
 .login-container p {
-    text-align:center;
+    text-align: center;
     font-size: 1.25rem;
     font-weight: 600;
     text-shadow: 2px 2px 2px #b9cde6;
@@ -401,9 +401,9 @@ body {
     text-shadow: 2px 2px 2px #4b4d4d;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
- }
+}
 
- .blog-enter-button {
+.blog-enter-button {
     justify-self: center;
     font-size: 1.4rem;
     margin-left: 38%;
@@ -416,14 +416,14 @@ body {
     border: 2px solid #676767;
     border-radius: 0.8rem;
     padding: 0.45rem 0.9rem;
-  }
+}
 
-  .blog-enter-button a {
+.blog-enter-button a {
     color: #f8f8f8;
     text-decoration: none;
-  }
+}
 
-  .blog-enter-button:hover {
+.blog-enter-button:hover {
     color: white;
     background: linear-gradient(rgb(13, 13, 255), #7a7cd4);
     text-shadow: 0 0 1px #add8e6, 0 0 2px #add8e6, 0 0 4px #add8e6, 0 0 6px #add8e6;
@@ -466,7 +466,6 @@ body {
     float: right;
 }
 
-.post-blog-button,
 .edit-blog-button,
 .delete-blog-button {
     color: #1d1d1d;
@@ -481,6 +480,7 @@ body {
 .edit-blog-button {
     background: linear-gradient(0.47turn, #7c5fe2, #cec2fa);
 }
+
 .edit-blog-button:hover {
     background: linear-gradient(0.47turn, #a28af7, #ebe6ff);
 }
@@ -488,19 +488,17 @@ body {
 .delete-blog-button {
     background: linear-gradient(0.47turn, #e25f5f, #eec1c1);
 }
+
 .delete-blog-button:hover {
     background: linear-gradient(0.47turn, #f38e8e, #ffeaea);
 }
 
 
-.post-blog-button:hover,
 .edit-blog-button:hover,
 .delete-blog-button:hover {
     color: #040404;
     border: 3px solid #020202;
 }
-
-
 
 
 .blog-title {
@@ -566,7 +564,7 @@ body {
     margin-left: 1.25rem;
     font-weight: 600;
     font-size: 1rem;
-    line-height: 1.1rem;
+    line-height: 0.9rem;
 }
 
 .addCommentBtn {
@@ -601,7 +599,7 @@ body {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: #12513360; 
+    background-color: #12513360;
 }
 
 
@@ -613,9 +611,40 @@ body {
     padding: 1.75rem 1.75rem 1rem 2rem;
     border: 4px solid #5a6164;
     width: 40%;
-    min-height: 42%;
+    min-height: 32%;
     justify-content: space-around;
 }
+
+.comment-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.delete-comment-button {
+    color: #1d1d1d;
+    background: linear-gradient(0.42turn, #6e69ed, #cbc1ee);
+    font-size: 0.75rem;
+    margin-left: 0.9rem;
+    margin-top: -1rem;
+    border-radius: 0.75rem;
+    border: 1px solid #373737;
+    opacity: 0.75;
+}
+
+.delete-comment-button:hover {
+    background: linear-gradient(0.42turn, #a393f5, #eaeaff);
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #040404;
+    padding-bottom: 1px;
+    border: 1px solid #020202;
+    box-shadow: 2px 2px 2px #958b9a;
+    opacity: 1;
+}
+
 
 .add-comment-container p {
     color: #38383b;
@@ -691,7 +720,8 @@ body {
     font-weight: 600;
     position: relative;
     left: 14.5%;
-    text-shadow: 2px 2px 2px #698a71;;
+    text-shadow: 2px 2px 2px #698a71;
+    ;
     margin-top: -0.5rem;
 }
 
@@ -723,7 +753,7 @@ body {
 
 .blog-title {
     color: #1d1d1d;
-    background: linear-gradient(0.47turn, rgba(143, 251, 240, 0.6),rgba(227, 249, 247, 0.6));
+    background: linear-gradient(0.47turn, rgba(143, 251, 240, 0.6), rgba(227, 249, 247, 0.6));
     font-size: 1.4rem;
     font-weight: 600;
     min-width: 35%;
@@ -735,26 +765,40 @@ body {
     border-top: transparent;
     border-left: transparent;
 }
+
 .blog-title:hover {
-    background-color: #ffffff;;
+    background-color: #ffffff;
+    ;
 }
 
 .post-blog-button {
-    background: linear-gradient(0.47turn, #5ee089,#bed5c6);
+    color: #202020;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0.25rem;
+    border-radius: 1rem;
+    border: 2px solid #141414;
+    min-width: 8rem;
+    padding: 1px 0.5rem 0.25rem 0.5rem;
+    background: linear-gradient(0.47turn, #5ee089, #bed5c6);
     position: relative;
-    top: 0;
-    right: -0.25rem;
+    top: 0.5rem;
+    right: 0.5rem;
     float: right;
 }
 
 .post-blog-button:hover {
-    background: linear-gradient(0.47turn, #71e096,#c7ffda);
+    color: #040404;
+    border: 3px solid #020202;
+    padding: 0 0.4rem 0.2rem 0.35rem;
+    background: linear-gradient(0.47turn, #71e096, #c7ffda);
     box-shadow: 3px 3px 3px #595a5a;
 }
 
 .blog-text {
     color: #0c0c0c;
-    background-color: #f1fcf4;;
+    background-color: #f1fcf4;
+    ;
     font-size: 1rem;
     font-weight: 400;
     margin: 0.25rem 1rem;
@@ -765,20 +809,21 @@ body {
 }
 
 .blog-text:hover {
-    background-color: #ffffff;;
+    background-color: #ffffff;
+    ;
 }
 
 .blog-page-redirect {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     font-weight: 600;
     color: #1d1d1d;
-    padding: 3px;
+    padding: 4px 2px;
     position: fixed;
-    top: 5rem;
+    top: 4.75rem;
     left: 0.75%;
-    width: 8rem;
+    width: 9rem;
     min-width: 5.5%;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     background: linear-gradient(0.45turn, #f2ea90, #f2f2d0);
 }
 
@@ -813,11 +858,11 @@ body {
 
 .hidden {
     display: hidden;
-}   
+}
 
 .none {
     display: none;
-}   
+}
 
 .aligner-left {
     visibility: hidden;

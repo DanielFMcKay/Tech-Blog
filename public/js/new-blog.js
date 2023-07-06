@@ -38,6 +38,6 @@ const blogRetrieve = async (event) => {
 // }}
 // )};
 
-const blogPoster = () => blogRetrieve().then(document.location.reload);;
-postBlogBtn.addEventListener('click', blogPoster);
+const blogPoster = () => blogRetrieve().then(document.location.reload);
 
+postBlogBtn.addEventListener('click', blogPoster);

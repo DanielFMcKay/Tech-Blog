@@ -118,7 +118,7 @@ router.get("/new-blog", withAuth, async (req, res) => {
       });
     }
     else {
-      res.status(400).json({ message: 'No blog found'});
+      res.status(400).json({ message: 'No blog found' });
       return;
     }
   } catch (err) {
