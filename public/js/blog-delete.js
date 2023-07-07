@@ -22,10 +22,23 @@ if (deleteBlogBtn) {
 }
 
 
-deleteCommentBtn = document.querySelector('.delete-comment-button');
+deleteCommentBtn = document.querySelectorAll('.delete-comment-button');
+
+let commentId
+
+if (deleteCommentBtn) {
+    for (let i = 0; i < deleteCommentBtn.length; i++) {
+        deleteCommentBtn[i].addEventListener('click',
+        function () {
+            commentId = this.getAttribute('data-id')
+        });
+    }
+}
+
+
 const commentDeleteHandler = async (req, res) => {
     console.log("comment delete button clicked")
-    const commentId = deleteCommentBtn.getAttribute('data-id');
+    // const commentId = deleteCommentBtn.getAttribute('data-id');
     console.log(commentId + " is commentId")
 
     const deleteCommentConfirm = window.confirm("Are you sure you want to delete this Comment?");
@@ -36,16 +49,18 @@ const commentDeleteHandler = async (req, res) => {
         await fetch(`/api/comments/${commentId}`, {
             method: 'DELETE',
         })
-        .then(window.location.reload());
+            // .then(window.location.reload());
 
     };
 };
 
 
-if (deleteBlogBtn) {
-    deleteBlogBtn.addEventListener('click', delButtonHandler);
-};
+
 
 if (deleteCommentBtn) {
-    deleteCommentBtn.addEventListener('click', commentDeleteHandler);
-};
+    for (let i = 0; i < deleteCommentBtn.length; i++) {
+        deleteCommentBtn[i].addEventListener('click',
+                commentDeleteHandler
+            );
+    }
+}

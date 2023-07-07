@@ -3,35 +3,45 @@ techBlogMainContainer = document.querySelector('#techBlogMainContainer');
 // Comment Modal stuff
 const addCommentTile = document.querySelector('#add-comment-tile');
 const closeCommentPopup = document.querySelector('.close-comment-popup');
-const addCommentBtn = document.querySelectorAll('.addCommentBtn')[0];
+const addCommentBtn = document.querySelectorAll('.addCommentBtn');
 const commentSubmitBtn = document.querySelector('.commentSubmitBtn');
 
-addCommentTile.style.display = "none";
-
-addCommentBtn.addEventListener("click", function () {
-    addCommentTile.style.display = "block";
-});
-
-closeCommentPopup.addEventListener("click", function () {
+if (addCommentTile) {
     addCommentTile.style.display = "none";
-});
+}
 
+let blogId
+
+if (addCommentBtn) {
+    for (let i = 0; i < addCommentBtn.length; i++) {
+        addCommentBtn[i].addEventListener("click", function () {
+            addCommentTile.style.display = "block";
+            blogId = this.getAttribute('data-id');
+        });
+    }
+}
+
+if (closeCommentPopup) {
+    closeCommentPopup.addEventListener("click", function () {
+        addCommentTile.style.display = "none";
+    });
+}
 
 const commentRetrieve = async (event) => {
 
     const commentText = document.querySelector('.new-comment-textfield').value.trim();
-    const blogId = addCommentBtn.getAttribute('data-id');
+    console.log(blogId + " is blogId")
 
     console.log("comment submit button clicked")
     if (!commentText) {
         alert('Please enter a comment.')
         return;
-    }   
+    }
     console.log(commentText + " is commentText")
     try {
         const response = await fetch('/api/comments', {
             method: 'POST',
-            body: JSON.stringify({ 
+            body: JSON.stringify({
                 commentText,
                 blogId,
             }),
@@ -48,4 +58,6 @@ const commentRetrieve = async (event) => {
 
 const commentPoster = () => commentRetrieve().then(() => document.location.reload());
 
-commentSubmitBtn.addEventListener('click', commentPoster);
+if (commentSubmitBtn) {
+    commentSubmitBtn.addEventListener('click', commentPoster);
+}
