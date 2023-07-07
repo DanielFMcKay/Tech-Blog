@@ -27,6 +27,8 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 
 ![image](https://github.com/DanielFMcKay/Tech-Blog/assets/123746582/dd386aae-cf5d-4db4-86cf-c9f859c02ba4)
 
+![image](https://github.com/DanielFMcKay/Tech-Blog/assets/123746582/ee1a7284-c74f-445d-98a3-a80f8b48e33b)
+
 
 ### Installation
 * Clone the repo to a local directory. After doing so, please navigate there in real time.
