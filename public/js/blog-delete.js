@@ -49,7 +49,7 @@ const commentDeleteHandler = async (req, res) => {
         await fetch(`/api/comments/${commentId}`, {
             method: 'DELETE',
         })
-            // .then(window.location.reload());
+            .then(window.location.reload());
 
     };
 };

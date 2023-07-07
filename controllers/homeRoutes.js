@@ -32,7 +32,7 @@ router.get("/blog", withAuth, async (req, res) => {
       include: [
         {
           model: Comment,
-          attributes: ['comment_id', 'comment_text', 'blog_id', 'date_created', 'user_id'],
+          attributes: ['id', 'comment_text', 'blog_id', 'date_created', 'user_id'],
           include: {
             model: User,
             attributes: ['username'],
@@ -90,7 +90,7 @@ router.get("/new-blog", withAuth, async (req, res) => {
       include: [
         {
           model: Comment,
-          attributes: ['comment_id', 'comment_text', 'blog_id', 'date_created', 'user_id'],
+          attributes: ['id', 'comment_text', 'blog_id', 'date_created', 'user_id'],
           include: {
             model: User,
             attributes: ['username'],
