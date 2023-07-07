@@ -3,7 +3,7 @@
     <div class="blog-header-row">
         <div class="blog-button-row">
             {{#if blog.is_owner}}
-            <button class="edit-blog-button">Edit</button>
+            <button class="edit-blog-button" data-id="{{blog.id}}"><a>Edit</a></button>
             <button class="delete-blog-button" data-id="{{blog.id}}">Delete</button>
             {{/if}}
         </div>

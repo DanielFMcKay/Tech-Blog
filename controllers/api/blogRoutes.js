@@ -28,8 +28,8 @@ router.put('/:id', withAuth, async (req, res) => {
   try {
     const updateBlog = await Blog.update(
       {
-        title: req.body.title,
-        content: req.body.content,
+        title: req.body.blogTitle,
+        blog_text: req.body.blogText,
       },
       {
         where: {
