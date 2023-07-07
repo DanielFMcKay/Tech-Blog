@@ -2,7 +2,7 @@
 
 ### by Dan McKay
 
-* This is the assignment for Week 14 of the Full Stack Coding Bootcamp as offered through UC Berkeley Continuing Education in partnership with edX. This ReadMe is currently a placeholder, as this is very much a work in progress still.
+* This is the assignment for Week 14 of the Full Stack Coding Bootcamp as offered through UC Berkeley Continuing Education in partnership with edX.
 
 ### Overview
 * Dan's Tech Blog is a micro-blogging site that is intended as a demonstration of a social media site where users can sign-up, make posts, read other posts, edit and delete their own posts, and comment on others' posts.
@@ -23,9 +23,10 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 
 ![image](https://github.com/DanielFMcKay/Tech-Blog/assets/123746582/b415a81c-bc4d-4a3b-ba2a-194be16a7528)
 
-![image](https://github.com/DanielFMcKay/Tech-Blog/assets/123746582/913a6cb5-d327-4f07-ba7d-bb1d51a81149)
+![image](https://github.com/DanielFMcKay/Tech-Blog/assets/123746582/9152afa0-e2c8-4ba9-a51d-909a6f17a6d5)
 
-![image](https://github.com/DanielFMcKay/Tech-Blog/assets/123746582/e939725c-d3c6-46ce-8f89-521303022735)
+![image](https://github.com/DanielFMcKay/Tech-Blog/assets/123746582/dd386aae-cf5d-4db4-86cf-c9f859c02ba4)
+
 
 ### Installation
 * Clone the repo to a local directory. After doing so, please navigate there in real time.
