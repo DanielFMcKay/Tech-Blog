@@ -30,7 +30,7 @@
     {{#each comments as |comment| }}
     <div class="comment-row row">
     <p>• {{user.username}}: {{comment.comment_text}} - {{format_date date_created}}</p>
-    <button class="delete-comment-button" data-id="{{id}}">{{comment.id}}✕</button>
+    <button class="delete-comment-button" data-id="{{id}}">✕</button>
     </div>
     {{else}}
     {{/each}}
