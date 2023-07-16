@@ -546,6 +546,10 @@ body {
     border-top: 1px dashed #363636;
 }
 
+.comment-header-aligner-newblog {
+    margin-left: 0.25rem;
+}
+
 .comment-header-row {
     flex-direction: row;
     margin-bottom: 1rem;
